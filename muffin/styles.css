@@ -236,6 +236,9 @@ a, a:active, a:link, a:visited {
 }
 
 @media (max-width: 600px) {
+	.top-section {
+		background-size: cover;
+	}
 	.table-cell {
 		display: block;
 	}
