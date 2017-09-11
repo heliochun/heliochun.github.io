@@ -220,7 +220,7 @@ a, a:active, a:link, a:visited {
     background-color: #eee;
 }
 .footer-wrapper {
-    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
 	padding-top: 35px;
     padding-bottom: 40px;
@@ -235,5 +235,9 @@ a, a:active, a:link, a:visited {
     max-height: 50px;
 }
 
-
+@media (max-width: 600px) {
+	.table-cell {
+		display: block;
+	}
+}
 
