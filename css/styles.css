@@ -409,7 +409,7 @@ span.release-date {
 		margin-left: 100px;
 	}
 }
-@media (max-height: 480px) {
+@media (max-width: 480px), (max-height: 480px) {
 	#navigation {
 		font-size: 18px !important;
 	}
