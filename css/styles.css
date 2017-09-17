@@ -18,8 +18,7 @@ body {
 	background-image: url(../images/logo-full-hc-cut.png);
     background-size: 50%;
     background-repeat: no-repeat;
-    background-position: center center;
-	background-attachment: fixed;
+    background-position: 50% calc(50vh - -50%);
 }
 a, a:active, a:link, a:visited {
     text-decoration: none;
@@ -406,9 +405,6 @@ span.release-date {
 }
 
 @media (max-width: 480px) and (max-height: 480px) {
-	body{
-		 background-attachment: initial;
-	}
 	#navigation {
 		font-size: 125% !important;
 	}
