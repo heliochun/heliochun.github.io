@@ -3,6 +3,11 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 	font: 400 16px/24px Roboto,sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -401,10 +406,10 @@ span.release-date {
 
 @media (max-width: 480px) {
 	#navigation {
-		font-size: 120% !important;
+		font-size: 150% !important;
 	}
 	.profile-structure .body-content {
-		margin-top: 50px;
+		margin-top: 25px;
 		margin-bottom: 50px;
 	}
 	.normal-structure .body-content{
