@@ -54,8 +54,8 @@ p {margin: 0px;}
     background-color: #009688;
     opacity:0;
     z-index:2;
-    animation: init 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.4s ease-in-out forwards;
-    animation-delay: 0.2s, 0.8s, 1.8s, 2.7s;
+    animation: init 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.4s ease-in-out forwards, overflowAuto 0s linear forwards;
+    animation-delay: 0.2s, 0.8s, 1.8s, 2.7s, 3.0s;
 }
 
 .bottom-ball-fill{
@@ -79,6 +79,7 @@ p {margin: 0px;}
 	position: absolute;
 	width: 100%;
 	max-width: 1000px;
+	overflow: hidden;
 }
 
 .profile-structure .body-content {
@@ -100,7 +101,6 @@ p {margin: 0px;}
 	padding: 25px 90px;
 	animation: moveIn 1s ease forwards;
 	animation-delay: 3.1s;
-    height: 100%;
 }
 
 .normal-structure h1 {
@@ -253,7 +253,6 @@ ul.listings {
     padding: 0;
     margin: 10px 20px;
     list-style: none;
-	overflow: auto;
     height: 88%;
 	border-top: 6px solid #009688;
     padding-top: 20px;
@@ -391,16 +390,31 @@ span.release-date {
     }
 }
 
+@keyframes overflowAuto {
+    0% {
+        overflow: hidden;
+    }
+    100% {
+        overflow: auto;
+    }
+}
+
 @media (max-width: 480px) {
 	#navigation {
 		font-size: 120% !important;
 	}
-	.body-container {
-		overflow: auto;
-	}
 	.profile-structure .body-content {
-		margin-top: 80px;
-		margin-bottom: 60px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	.normal-structure .body-content{
+		padding:0;
+	}
+	.normal-structure .body-content h1 {
+		margin-top: 45px;
+		margin-left: 86px;
+		margin-bottom: 10px;
+		font-size: 165%;
 	}
 }
 @media (min-width: 480px) {
