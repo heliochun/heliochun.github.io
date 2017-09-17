@@ -406,7 +406,7 @@ span.release-date {
 
 @media (max-width: 480px) and (max-height: 480px) {
 	#navigation {
-		font-size: 120% !important;
+		font-size: 18px !important;
 	}
 	.profile-structure .body-content {
 		margin: 25px auto;
