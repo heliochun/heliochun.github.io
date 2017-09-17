@@ -1,0 +1,216 @@
+/* Navigation */
+nav#navigation ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu span, .menu span:before, .menu span:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.menu {
+    position: fixed;
+	top: 12px;
+	left: 0;
+	z-index: 100;
+	transform: scale(0.01);
+	opacity:0;
+	width: 85px;
+    height: 36px;
+    margin: 0 auto;
+    padding-top: 24px;
+	padding-bottom: 34px;
+    cursor: pointer;
+	animation: showMenu 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+	animation-delay: 4s;
+}
+.menu:before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #009688;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+	box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),
+				0 3px 14px 2px rgba(0,0,0,0.12),
+				0 5px 5px -3px rgba(0,0,0,0.2);
+	transition: box-shadow 0.2s linear;
+}
+.menu-open:before {
+    box-shadow: none !important;
+}
+
+/* fill BG */
+#menu-bar-init {
+    position: fixed;
+    top: 16px;
+    left: 18px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #009688;
+    z-index: 3;
+	opacity:0;
+	animation: menuBgAppear 0s forwards;
+	animation-delay: 4.4s;
+	transition: 0.3s ease-in-out;
+}
+.menu-bar-fill {
+    transform: scale(60);
+}
+
+#navigation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+	opacity:0;
+	visibility: hidden;
+    z-index: 101;
+	font-size: 50px;
+    line-height: normal;
+    text-align: center;
+    color: #fff;
+}
+#navigation.show-nav {
+    animation: showNav 0.8s ease forwards;
+	animation-delay: 0.3s;
+}
+
+#navigation a {
+    color: #fff;
+	margin: 5px 0;
+    display: block;
+	border-radius: 3px;
+}
+#navigation a:hover {
+	background-color: #fff;
+    color: #019688;
+    padding: 0px 20px;
+}
+
+#navigation .currentNav {
+    background-color: #fff;
+    color: #019688;
+    padding: 0px 20px;
+}
+
+.menu span:before {
+    -webkit-transform: translate(0, -24px);
+    transform: translate(0, -24px);
+}
+.menu span:after {
+    -webkit-transform: translate(0, 12px);
+    transform: translate(0, 12px);
+}
+.menu.menu-open span {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.menu.menu-open span:before {
+    width: 60%;
+    -webkit-transform: rotate(45deg) translate(20px, -40px);
+    transform: rotate(45deg) translate(20px, -40px);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.menu.menu-open span:after {
+    width: 60%;
+    -webkit-transform: rotate(-45deg) translate(29px, 32px);
+    transform: rotate(-45deg) translate(29px, 32px);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.menu.menu-close span {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.menu.menu-close span:before {
+    width: 100%;
+    -webkit-transform: rotate(0deg) translate(0, -24px);
+    transform: rotate(0deg) translate(0, -24px);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+.menu.menu-close span:after {
+    width: 100%;
+    -webkit-transform: rotate(0deg) translate(0, 12px);
+    transform: rotate(0deg) translate(0, 12px);
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes showMenu {
+	50% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(0.4);
+        opacity: 1;
+    }
+}
+
+@keyframes menuBgAppear {
+	0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showNav {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%,-50%);
+    }
+}
+
+/*Material Design Paper button */
+.paper-ripple,.paper-ripple .paper-ripple__wave,.paper-ripple .paper-ripple__waves,.paper-ripple--round .paper-ripple__wave-container{overflow:hidden}.paper-ripple{display:block;position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;pointer-events:none}.paper-ripple .paper-ripple__wave,.paper-ripple .paper-ripple__wave-container,.paper-ripple--round .paper-ripple__background,.paper-ripple--round .paper-ripple__waves{border-radius:50%}.paper-ripple .paper-ripple__background,.paper-ripple .paper-ripple__wave,.paper-ripple .paper-ripple__wave-container,.paper-ripple .paper-ripple__waves{pointer-events:none;position:absolute;top:0;left:0;width:100%;height:100%}.paper-ripple .paper-ripple__background,.paper-ripple .paper-ripple__wave{opacity:0}.paper-ripple .paper-ripple__background{will-change:opacity,background-color}.paper-ripple .paper-ripple__wave{will-change:opacity,transform}.paper-ripple .paper-ripple__wave-container{will-change:transform}
+
+
+.paper-button {
+	position: relative;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	max-height: 75px;
+    border-radius: 2px;
+}
+
+.paper-button svg {
+    fill: rgba(0, 0, 0, 0.87);
+}
+
+.paper-button__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.paper-button__icon svg {
+    pointer-events: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
