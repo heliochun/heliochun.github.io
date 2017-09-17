@@ -282,10 +282,12 @@ ul.listings {
     margin-bottom: 6px;
 }
 .methods span {
+	display: inline-block;
 	background-color: #E0E0E0;
     padding: 4px 8px;
     border-radius: 4px;
     margin-right: 6px;
+	margin-bottom: 6px;
     font-size: 14px;
     line-height: normal;
 	cursor: context-menu;
