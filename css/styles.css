@@ -406,11 +406,11 @@ span.release-date {
 
 @media (max-width: 480px) {
 	#navigation {
-		font-size: 150% !important;
+		font-size: 125% !important;
 	}
 	.profile-structure .body-content {
-		margin-top: 25px;
-		margin-bottom: 50px;
+		margin: 25px auto;
+		position: static;
 	}
 	.normal-structure .body-content{
 		padding:0;
@@ -420,6 +420,17 @@ span.release-date {
 		margin-left: 86px;
 		margin-bottom: 10px;
 		font-size: 165%;
+	}
+	@keyframes moveInCenter {
+		0% {
+			opacity: 0;
+			transform: translate(0%,50%);
+		}
+		100% {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(0%,0%);
+		}
 	}
 }
 @media (min-width: 480px) {
