@@ -8,6 +8,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+	height: 100%;
 	font: 400 16px/24px Roboto,sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
