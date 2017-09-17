@@ -22,7 +22,7 @@ body {
 	background-image: url(../images/logo-full-hc-cut.png);
     background-size: 50%;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: center center;
 }
 a, a:active, a:link, a:visited {
     text-decoration: none;
