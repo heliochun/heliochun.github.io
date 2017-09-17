@@ -107,6 +107,7 @@ p {margin: 0px;}
 	top: 0;
     left: 50%;
 	transform: translate(-50%,25%);
+	margin-top: 25px;
 	animation: moveIn 1s ease forwards;
 	animation-delay: 3.1s;
 }
@@ -424,7 +425,7 @@ span.release-date {
 		position: static;
 	}
 	.normal-structure .body-content{
-		padding:0;
+		margin-top: 0;
 	}
 	.normal-structure .body-content h1 {
 		margin-top: 26px;
