@@ -213,7 +213,8 @@ a, a:active, a:link, a:visited {
     color: #4CAF50;
 }
 .price-tag-info {
-    font-size: 11px;
+	font-size: 13px;
+    font-weight: bold;
 }
 
 #footer {
