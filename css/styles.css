@@ -26,12 +26,16 @@ body {
     transform: translateX(-50%) translateY(-50%);
     width: 102%;
     height: 102%;
-	background-image: radial-gradient(circle, rgb(13, 22, 31), rgb(0, 0, 0));
 	filter: blur(100px);
     pointer-events: none;
 	z-index: -1;
 }
 
+@media (min-width: 616px){
+	#body-mask {
+		background-image: radial-gradient(circle, rgb(13, 22, 31), rgb(0, 0, 0));
+	}
+}
 
 i.material-icons {
     font-size: inherit;
