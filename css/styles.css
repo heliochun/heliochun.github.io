@@ -89,7 +89,7 @@ button, .button {
     -moz-user-select: none;       /* Firefox */
     -ms-user-select: none;        /* IE10+ */
     user-select: none;
-	will-change: box-shadow;
+	will-change: transform, opacity, box-shadow;
 }
 .no-select {
 	-webkit-touch-callout: none;  /* iPhone OS, Safari */
@@ -143,7 +143,6 @@ button, .button {
 .bounce {
 	animation: scaleBounce 0.3s linear forwards;
 	opacity: 0;
-	will-change: transform, opacity;
 }
 #navigation li:first-child .bounce {
 	animation-delay: .2s;
