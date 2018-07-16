@@ -192,9 +192,11 @@ button, .button {
 /* BODY */
 nav#navigation {
     position: fixed;
+    top: 0;
     left: 0;
+    bottom: 0;
     width: 70px;
-    height: 100%;
+    height: 100vh;
     text-align: center;
 	display: table;
 	font-size: 20px;
@@ -613,6 +615,9 @@ button#soundcloud:before, button#soundcloud:after {
 }
 
 @media (max-width: 1000px){
+	body {
+		overflow: auto;
+	}
 	#fireMenu {
 		position: fixed;
 		top: 20px;
