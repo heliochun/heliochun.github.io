@@ -17,7 +17,7 @@ proLi.on('click', function() {
 	});
 });
 
-if ($(window).width() < 1000) {
+if ($(window).width() > 1000) {
 (function() {
 	var delay = false;
 
