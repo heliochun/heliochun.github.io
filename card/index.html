@@ -16,22 +16,11 @@
 	body {
 		margin: 0;
 		padding: 0;
-		overflow: hidden;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
 		font: 400 16px/24px Roboto,sans-serif;
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
 		color: #212121;
 		text-align: left;
-		background-color: #263238;
-		background-image: url(https://1.bp.blogspot.com/-IdRU1YUpbY8/Wb6X9b90OnI/AAAAAAAAAsE/XPC0QIsVx1Eh5n_h0Z6jNqn_AWSSvgFYwCLcBGAs/s800/logo-full-hc-cut.png);
-		background-size: 50%;
-		background-repeat: no-repeat;
-		background-position: center center;
 	}
 	a, a:active, a:link, a:visited {
 		text-decoration: none;
@@ -59,83 +48,15 @@
 	}
 
 
-	/* body content */
-	.body-container {
-		position: fixed;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%,-50%);
-		height: 50px;
-		width: 50px;
-		overflow: hidden;
-		border-radius: 50%;
-		background-color: #009688;
-		opacity:0;
-		z-index:2;
-		animation: init 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.4s ease-in-out forwards, overflowAuto 0s linear forwards;
-		animation-delay: 0.2s, 0.8s, 1.8s, 2.7s, 3.3s;
-	}
-
-	.bottom-ball-fill{
-		position: fixed;
-		left: 50%;
-		top: 100%;
-		transform: translate(-50%,-50%);
-		height:0px;
-		width:0px;
-		border-radius: 50%;
-		background-color: #009688;
-		z-index:0;
-		animation: puff 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s linear forwards;
-		animation-delay: 1.8s, 2.3s;
-
-	}
-
-	.body-content {
-		opacity:0;
-		visibility:hidden;
-		position: absolute;
-		width: 100%;
-		max-width: 1000px;
-		overflow: hidden;
-	}
-
-	.profile-structure .body-content {
-		max-width:300px;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -25%);
-		background-color: #FFFFFF;
-		animation: moveInCenter 1s ease forwards;
-		animation-delay: 3.1s;
-		border-radius: 15px;
-		box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
-	}
-
-	.normal-structure .body-content {
-		top: 0;
-		left: 50%;
-		transform: translate(-50%,25%);
-		margin-top: 25px;
-		animation: moveIn 1s ease forwards;
-		animation-delay: 3.1s;
-	}
-
-	.normal-structure h1 {
-		font-size: 200%;
-		line-height: normal;
-		margin-bottom: 35px;
-		font-weight: 400;
-	}
 
 	.profile-wrapper {
 		position: relative;
 		overflow: hidden;
-		border-radius: 15px;
+		border-radius: 10px;
 	}
 
 	.profile-header {
-		background-color: #009688;
+		background-color: #263238;
 		padding: 10px;
 		color: #fff;
 		text-align:center;
@@ -182,7 +103,7 @@
 
 	#profile-bio-wrapper {
 		position: absolute;
-		top: 89.2%;
+		top: 88%;
 		left: 0;
 		right: 0;
 		bottom: 0;
@@ -193,7 +114,7 @@
 		transition: transform .4s cubic-bezier(0.4,0.0,0.2,1);
 	}
 	.show-more-info {
-		transform: translateY(-82%);
+		transform: translateY(-80%);
 	}
 
 	p.short-description {
@@ -203,7 +124,7 @@
 		display: inline-block;
 		text-align: center;
 		font-size: 50px;
-		color: #019688;
+		color: #263238;
 		position: absolute;
 		top: -25px;
 		left: 50%;
@@ -226,7 +147,8 @@
 	}
 
 	.social-list {
-		border-bottom: 1px solid #eee;
+		background-color: #eee;
+		border-bottom: 2px solid #eee;
 	}
 
 	.social-list ul {
@@ -241,7 +163,7 @@
 		display: table-cell;
 	}
 	li.bio-item:hover {
-		background-color: #EEEEEE;
+		background-color: #E0E0E0;
 	}
 	li.bio-item:nth-child(2) {
 		padding-right: 0px;
@@ -254,7 +176,7 @@
 	li.bio-item a {
 		color: #616161;
 		display: block;
-		padding: 10px 0;
+		padding: 12px 0;
 	}
 
 	.bio-extra {
@@ -272,16 +194,67 @@
 	}
 
 
+	/* #####################################
+	ALL THE REST ############################
+	######################################## */
+
+	.mail-wrapper {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		margin-top: 35px;
+		height: 50px;
+		width: 50px;
+		overflow: hidden;
+		border-radius: 50%;
+		background-color: #607D8B;
+		box-shadow: 0 -2px 25px 0 rgba(0, 0, 0, 0.15), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+		opacity:0;
+		z-index: -1;
+		will-change: auto;
+		animation: init 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.4s ease-in-out forwards;
+		animation-delay: 0s, 0.7s, 1.7s, 2.4s;
+	}
+
+	.mail-content{
+		opacity:0;
+		box-sizing: border-box;
+		color: #000;
+		will-change: transform, opacity;
+		animation: moveInCenter 0.6s ease forwards;
+		animation-delay: 2.7s;
+	}
+
+	.bottom-ball-fill{
+		position: fixed;
+		left: 50%;
+		top: 100%;
+		transform: translate(-50%,-50%);
+		height:0px;
+		width:0px;
+		border-radius: 50%;
+		background-color: #607D8B;
+		z-index:0;
+		will-change: auto;
+		animation: puff 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s linear forwards;
+		animation-delay: 1.8s, 2.3s;
+	}
+
+
+
 	/* Animations */
 	@keyframes init {
 		0% {
 			width: 0px;
 			height: 0px;
+			margin-top: 35px;
 		}
 		100% {
 			width: 56px;
 			height: 56px;
 			opacity: 1;
+			z-index:2;
 		}
 	}
 	@keyframes moveDown {
@@ -293,33 +266,34 @@
 		}
 		100% {
 			top: 100%;
+			margin-top: 0;
 		}
 	}
 	@keyframes moveUp {
 		0% {
 			top: 100%;
-			background: #009688;
+			background: #607D8B;
 		}
 		50% {
 			top: 40%;
 		}
 		100% {
 			top: 50%;
-			background: #E0E0E0;
+			background: #fff;
 		}
 	}
 	@keyframes materia {
 		0% {
-			background: #E0E0E0;
+			background: #fff;
 		}
 		50% {
 			border-radius: 50%;
 		}
 		100% {
-			height: 100%;
-			width: 100%;
-			background: #EEEEEE;
-			border-radius: 0px;
+			width: 300px;
+			height: 410px;
+			background: #fff;
+			border-radius: 10px;
 		}
 	}
 
@@ -335,6 +309,7 @@
 			height:50px;
 			width:50px;
 			transform:translate(-50%,-50%) scale(50);
+			z-index: 1;
 
 		}
 	}
@@ -347,73 +322,24 @@
 		}
 	}
 
-	@keyframes moveIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-			visibility: visible;
-			transform: translate(-50%,0%);
-		}
-	}
 
 	@keyframes moveInCenter {
 		0% {
-			opacity: 0;
+			opacity:0;
 		}
 		100% {
 			opacity: 1;
-			visibility: visible;
-			transform: translate(-50%,-50%);
 		}
 	}
-
-	@keyframes overflowAuto {
-		0% {
-			overflow: hidden;
-		}
-		100% {
-			overflow: auto;
-		}
+	.bio-extra::-webkit-scrollbar-track {
+		background-color: #F4F4F4;
 	}
-
-	@media (max-width: 1120px) {
-		.normal-structure .body-content h1 {
-			margin-top: 21px;
-			margin-left: 100px;
-		}
+	.bio-extra::-webkit-scrollbar {
+		width: 6px;
+		background: #F4F4F4;
 	}
-	@media (max-width: 480px), (max-height: 480px) {
-		#navigation {
-			font-size: 125% !important;
-		}
-		.profile-structure .body-content {
-			margin: 25px auto;
-			position: static;
-		}
-		.normal-structure .body-content{
-			margin-top: 0;
-		}
-		.normal-structure .body-content h1 {
-			margin-top: 26px;
-			margin-left: 86px;
-			font-size: 165%;
-		}
-		@keyframes moveInCenter {
-			0% {
-				opacity: 0;
-				transform: translate(0%,50%);
-			}
-			100% {
-				opacity: 1;
-				visibility: visible;
-				transform: translate(0%,0%);
-			}
-		}
-	}
-	@media (min-width: 480px) {
-		
+	.bio-extra::-webkit-scrollbar-thumb {
+		background: #dad7d7;
 	}
 </style>
 	
@@ -421,56 +347,59 @@
 
 <body>
 
-<div class="body-container profile-structure">
-    <div class="body-content">
-        <div class="profile-wrapper">
-			<div class="profile-header profile-same">
-				<div class="profile-avatar">
-					<img src="https://1.bp.blogspot.com/-zGI4s4Hb1V8/Wb5Cvb2OI6I/AAAAAAAAAr0/036ooJyLskE4FJCNljG0q_ZIHaWkv85MwCLcBGAs/s320/hc500.jpg"/>
-				</div>
-				<h1>Hélio Chun</h1>
-				<h2>Front-End Developer</h2>
-			</div>
-			<div class="profile-bio profile-same">
-				<p class="short-description">Hi! My name is Chun and I'm a Web Developer. I build and design fast...</p>
-				<div id="profile-bio-wrapper">
-					<div id="show-more-icon" class="no-select">
-						<i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
-					</div>
-					<div class="social-list">
-						<ul>
-							<li class="bio-item paper-button"><a href="https://pt.stackoverflow.com/users/11886" title="Stack Overflow PT" target="_blank"><i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i></a></li>
-							<li class="bio-item paper-button"><a href="https://codepen.io/heliochun" title="CodePen" target="_blank"><i class="fa fa-fw fa-codepen" aria-hidden="true"></i></a></li>
-							<li class="bio-item paper-button"><a href="https://twitter.com/TweetChun" title="Twitter" target="_blank"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i></a></li>
-							<li class="bio-item paper-button"><a href="javascript:void(0)" itemprop="email" title="" target="_top"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<div class="bio-extra">
-						<p>Hi, my name is Hélio Chun and I'm a Front-end Web Developer.</p>
-						<p>I mostly live on the <a title="User Interface Development" href="https://www.google.com/search?q=ui+development&oq=ui+development" target="_blank">UI Development</a> 
-						making the Web faster, prettier and more user friendly both for the eyes and for people to interact with.
-						</p>
-						<p>Recently, I've been focusing on helping a <a href="https://goo.gl/2eXWDJ" target="_blank">free Open Source CMS platform for Q&amp;A sites</a>
-						providing new <a href="https://goo.gl/We5RV8" target="_blank">code updates for inactive core plugins</a> 
-						and developing sexier themes like <a href="https://heliochun.github.io/muffin/" target="_blank">this</a>
-						to keep the platform alive and up to date.
-						</p>
-						<p>I love code and tech in general, even if I'm not working on my own projects I always 
-						<a href="https://pt.stackoverflow.com/users/11886" target="_blank">find myself helping other people solve their code related problems</a>,
-						but I'm also an aspiring amateur videographer, artist, hip-hop dancer and a reformed Mechanic.
-						</p>
-						<p>If you want to get in touch, try <a href="mailto:gdev.business@gmail.com?Subject=Website%20development" target="_top">email</a> or 
-						<a href="https://goo.gl/T8ksas" target="_blank">Twitter</a>.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+<div class="mail-container">
+    <div class="mail-wrapper">
+        <div class="mail-content">
+            <div class="profile-wrapper">
+                <div class="profile-header profile-same">
+                    <div class="profile-avatar">
+                        <img src="https://4.bp.blogspot.com/-PA53ZOlcOy8/W0v6C4JLEOI/AAAAAAAAA1M/bQ1hGdlTvUw0HFzE7GuzqayjluysQ4ZnQCLcBGAs/s1600/0462.png"/>
+                    </div>
+                    <h1>Hélio Chun</h1>
+                    <h2>Front-End Developer</h2>
+                </div>
+                <div class="profile-bio profile-same">
+                    <p class="short-description">Hi! My name is Chun and I'm a Web Developer. I build and design fast...</p>
+                    <div id="profile-bio-wrapper">
+                        <div id="show-more-icon" class="no-select">
+                            <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+                        </div>
+                        <div class="social-list">
+                            <ul>
+                                <li class="bio-item paper-button"><a href="https://pt.stackoverflow.com/users/11886" title="Stack Overflow PT" target="_blank"><i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i></a></li>
+                                <li class="bio-item paper-button"><a href="https://codepen.io/heliochun" title="CodePen" target="_blank"><i class="fa fa-fw fa-codepen" aria-hidden="true"></i></a></li>
+                                <li class="bio-item paper-button"><a href="https://twitter.com/TweetChun" title="Twitter" target="_blank"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i></a></li>
+                                <li class="bio-item paper-button"><a href="mailto:gdev.business@gmail.com?Subject=Website%20development" target="_top"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="bio-extra">
+                            <p>Hi, my name is Hélio Chun and I'm a Front-end Web Developer.</p>
+                            <p>I mostly live on the <a title="User Interface Development" href="https://www.google.com/search?q=ui+development&oq=ui+development" target="_blank">UI Development</a> 
+                                making the Web faster, prettier and more user friendly both for the eyes and for people to interact with.
+                            </p>
+                            <p>Recently, I've been focusing on helping a <a href="https://goo.gl/2eXWDJ" target="_blank">free Open Source CMS platform for Q&amp;A sites</a>
+                                providing new <a href="https://goo.gl/We5RV8" target="_blank">code updates for inactive core plugins</a> 
+                                and developing sexier themes like <a href="https://heliochun.github.io/muffin/" target="_blank">this</a>
+                                to keep the platform alive and up to date.
+                            </p>
+                            <p>I love code and tech in general, even if I'm not working on my own projects I always 
+                                <a href="https://pt.stackoverflow.com/users/11886" target="_blank">find myself helping other people solve their code related problems</a>,
+                                but I'm also an aspiring amateur videographer, artist, hip-hop dancer and a reformed Mechanic.
+                            </p>
+                            <p>If you want to get in touch, try <a href="mailto:gdev.business@gmail.com?Subject=Website%20development" target="_top">email</a> or 
+                                <a href="https://goo.gl/T8ksas" target="_blank">Twitter</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="bottom-ball-fill"></div>
 
-<script>var bioShowMore = document.getElementById('show-more-icon');
+<script>
+var bioShowMore = document.getElementById('show-more-icon');
 var bioMoreWrap = document.getElementById('profile-bio-wrapper');
 
 if (typeof(bioShowMore) != 'undefined' && bioShowMore != null){

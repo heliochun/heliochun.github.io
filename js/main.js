@@ -1,3 +1,9 @@
+$(window).on('load',function(){
+	if($(window).width() < 616){
+		window.location = 'https://heliochun.github.io/card'
+	}
+});
+
 var proLi = $('.navAnchor');
 
 proLi.on('click', function() {
