@@ -67,19 +67,6 @@ for (var i = 0; i < b.length; i++) {
     });
 }
 
-/* Roll Text */
-if ($(window).width() > 480) {
-	function scrumbleWords(){
-		$(".textScramble1").scramble(1000, 4, "alphabet", true);
-		$(".textScramble2").scramble(1000, 4, "alphabet", true);
-	}
-	scrumbleWords();
-
-	$('[data-anchor="about"]').on('click', function(){
-		scrumbleWords();
-	});
-}
-
 /* SOUNDCLOUD */
 $(document).ready(function() {
     var scid = $('#soundcloud');
@@ -129,11 +116,13 @@ $('#dark-pane').on('click', function(){
 });
 
 $(document).ready(function() {
-	setTimeout(function(){
-		var wh2 = $('.welcome h2').height();
-		$('.welcome h2').height(wh2+10)
-		$(".welcome h2").scramble(1000, 10, "alphabet", true);
-	},50);
+	if ($(window).width() > 1000) {
+		setTimeout(function(){
+			var wh2 = $('.welcome h2').height();
+			$('.welcome h2').height(wh2+10)
+			$(".welcome h2").scramble(1000, 10, "alphabet", true);
+		},50);
+	}
 });
 
 // Move body post images to actual Slider

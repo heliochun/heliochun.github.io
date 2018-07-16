@@ -467,6 +467,7 @@ button#soundcloud:before, button#soundcloud:after {
     overflow: hidden;
 	backface-visibility: hidden;
 	border-radius: 20%;
+	will-change: box-shadow, border;
 }
 .targetProject:hover {
     box-shadow: 0px 0px 20px 1px #f50, inset 0px 0px 20px 1px #f50;
@@ -481,6 +482,7 @@ button#soundcloud:before, button#soundcloud:after {
     bottom: 0;
     background-color: rgba(23, 35, 34, 0.3);
 	transition: opacity .2s ease-in-out;
+	will-change: opacity;
 }
 .targetProject:hover.targetProject:after {
     opacity: 0.3;
