@@ -28,6 +28,7 @@
 		<li alt="About"><button data-anchor="about" class="navButton navAnchor bounce"><i class="material-icons">person</i></button></li>
 		<li alt="Projects"><button data-anchor="projects" class="navButton navAnchor bounce"><i class="material-icons">description</i></button></li>
 		<li alt="Contact"><button data-anchor="contact" class="navButton navAnchor bounce"><i class="material-icons">mail_outline</i></button></li>
+		<li><button id="soundcloud" class="navButton musicPaused"></button></li>
 	</ul>
 </nav>
 
@@ -141,10 +142,18 @@
 <!-- Project Loader -->
 <div id="project-loader"></div>
 
+<!-- Soundcloud Track -->
+<iframe id="soundcloud_widget"
+      src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/408599928&show_artwork=false&liking=false&sharing=false"
+      width="100%"
+      height="100"
+      frameborder="no">
+</iframe>
 <div id="dark-pane" class="no-select hidden"></div> <!-- Dark Pane -->
 <div id="body-mask"></div> <!-- Body Mask -->
 
 <script src="js/main.js"></script>
+<script src="https://w.soundcloud.com/player/api.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

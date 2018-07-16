@@ -85,6 +85,7 @@ button, .button {
     -moz-user-select: none;       /* Firefox */
     -ms-user-select: none;        /* IE10+ */
     user-select: none;
+	will-change: box-shadow;
 }
 .no-select {
 	-webkit-touch-callout: none;  /* iPhone OS, Safari */
@@ -138,6 +139,7 @@ button, .button {
 .bounce {
 	animation: scaleBounce 0.3s linear forwards;
 	opacity: 0;
+	will-change: transform, opacity;
 }
 #navigation li:first-child .bounce {
 	animation-delay: .2s;
@@ -245,6 +247,7 @@ nav#navigation {
     border-radius: 50%;
     padding: 8px;
 	animation: rippleCircle 0.3s forwards;
+	will-change: opacity;
 }
 
 @keyframes rippleCircle{
@@ -427,6 +430,7 @@ button#soundcloud:before, button#soundcloud:after {
     border-radius: 50%;
     padding: 8px;
 	animation: rippleCircle 0.8s infinite;
+	will-change: opacity;
 }
 
 @keyframes playingMusic{
@@ -791,6 +795,7 @@ div#project-loader {
 	transform: translateX(100%);
 	transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .35s cubic-bezier(.4,0,.2,1);
 	opacity:0;
+	will-change: transform, opacity;
 }
 .slideContent {
 	transform: translateX(0) !important;
@@ -1003,6 +1008,7 @@ h1.entry-title {
 	box-shadow: 0 -2px 25px 0 rgba(0, 0, 0, 0.15), 0 13px 25px 0 rgba(0, 0, 0, 0.3);
     opacity:0;
 	z-index: -1;
+	will-change: auto;
 }
 .show-mail .mail-wrapper {
     animation: init 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.4s ease-in-out forwards;
@@ -1013,6 +1019,7 @@ h1.entry-title {
 	padding: 26px;
     box-sizing: border-box;
 	color: #000;
+	will-change: transform, opacity;
 }
 .show-mail .mail-content {
     animation: moveInCenter 0.6s ease forwards;
@@ -1069,6 +1076,7 @@ h1.entry-title {
     border-radius: 50%;
     background-color: #607D8B;
     z-index:0;
+	will-change: auto;
 }
 .show-mail .bottom-ball-fill {
     animation: puff 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s linear forwards;
