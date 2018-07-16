@@ -637,6 +637,9 @@ button#soundcloud:before, button#soundcloud:after {
 		padding: 0 !important;
 		border-bottom: 1px solid #504a3a;
 	}
+	.st-cWrap {
+		border-right: 0 !important;
+	}
 }
 
 
@@ -804,9 +807,11 @@ body {
 }
 
 /* ACTUAL PROJECT PAGE */
+.project-container {
+    overflow: auto;
+    height: 100%;
+}
 .project-wrapper{
-	overflow: auto;
-	height: 100%;
 	padding-bottom: 35px;
 }
 .singleTop {
@@ -826,7 +831,9 @@ body {
 }
 .st-title {
     padding: 0 30px;
+	border-left: 0 !important;
 }
+
 .htbc {
     display: table-cell;
     vertical-align: middle;

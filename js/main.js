@@ -17,6 +17,7 @@ proLi.on('click', function() {
 	});
 });
 
+if ($(window).width() < 1000) {
 (function() {
 	var delay = false;
 
@@ -52,6 +53,7 @@ proLi.on('click', function() {
 		} // if has class
 	});
 })();
+}
 
 /* Material design Ripple effect */
 var b = document.querySelectorAll('.navButton');
@@ -151,6 +153,7 @@ function checkBullets(){
 $(document).ready(function(){
     $('.targetProject').on('click', function(){
         $('#project-loader').addClass('slideContent');
+		$('body').addClass('no-scroll');
 		$("#project-loader").html('');
 		
 		if ($(this).data("project") === 'muffin') {
@@ -189,22 +192,23 @@ $(document).ready(function(){
     });
 });
 
+$('body').on('click', '#st-close', function(){
+	$('#project-loader').removeClass('slideContent');
+	$('body').removeClass('no-scroll');
+});
+
+$('body').on('click', '#featured-gallery', function(){
+	$('#lightBox').toggleClass('zoomSlider');
+});
+
+// ======================================================================= GDev Stuff 
+
 $('#fireEmail').on('click', function(){
 	$('.mail-container').addClass('show-mail');
 });
 
 $('.bottom-ball-fill, #closeEmail').on('click', function(){
 	$('.mail-container').removeClass('show-mail');
-});
-
-// ======================================================================= GDev Stuff 
-
-$('body').on('click', '#st-close', function(){
-	$('#project-loader').removeClass('slideContent');
-});
-
-$('body').on('click', '#featured-gallery', function(){
-	$('#lightBox').toggleClass('zoomSlider');
 });
 
 
