@@ -17,7 +17,6 @@ proLi.on('click', function() {
 	});
 });
 
-if ($(window).width() > 1000) {
 (function() {
 	var delay = false;
 
@@ -53,7 +52,6 @@ if ($(window).width() > 1000) {
 		} // if has class
 	});
 })();
-}
 
 /* Material design Ripple effect */
 var b = document.querySelectorAll('.navButton');
@@ -82,35 +80,6 @@ if ($(window).width() > 480) {
 	});
 }
 
-/* SOUNDCLOUD */
-$(document).ready(function() {
-    var scid = $('#soundcloud');
-	var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-	var is_playing = false;
-	
-	widget.bind(SC.Widget.Events.READY, function(){
-		scPlaying();
-	});
-	
-	function scPlaying(){
-		if(is_playing == false){
-			widget.play();
-			is_playing = true;
-			scid.toggleClass('musicPlaying musicPaused');
-		} else {
-			widget.pause();
-			is_playing = false;
-			scid.toggleClass('musicPlaying musicPaused');
-		}
-	}
-	widget.bind(SC.Widget.Events.FINISH, function(){
-		widget.play();
-	});
-	
-    scid.on('click', function() {
-		scPlaying();
-    });
-});
 
 // Menu
 $('#fireMenu').on('click', function(){
