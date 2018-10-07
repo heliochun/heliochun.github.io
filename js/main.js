@@ -55,9 +55,25 @@ proLi.on('click', function() {
 				scrollTop: a[i].offsetTop
 			  }, 250);
 			}
+			
 		} // if has class
 	});
 })();
+
+$(document).on('scroll', function() {
+    if($(this).scrollTop()>=$('#about').position().top && $(this).scrollTop()<=$('#about').position().top){
+        $('#about').addClass('activeSection');
+    } else {
+		$('#about').removeClass('activeSection');
+	}
+	
+	if($(this).scrollTop()>=$('#projects').position().top && $(this).scrollTop()<=$('#projects').position().top){
+        $('#projects').addClass('activeSection');
+    } else {
+		$('#projects').removeClass('activeSection');
+	}
+})
+
 
 /* Material design Ripple effect */
 var b = document.querySelectorAll('.navButton');

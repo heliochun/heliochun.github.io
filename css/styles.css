@@ -284,6 +284,7 @@ nav#navigation {
 section {
     height: 100vh;
 	position: relative;
+	overflow: hidden;
 }
 
 section#about:before {
@@ -300,6 +301,35 @@ section#about:before {
 	opacity: 0.1;
     z-index: 0;
 }
+
+section:before {
+	transform: scale(1.2);
+	-webkit-filter: blur(7px);
+	-moz-filter: blur(7px);
+	-o-filter: blur(7px);
+	-ms-filter: blur(7px);
+	filter: blur(7px);
+	/*transition: all 4s ease-out;*/
+}
+section.activeSection:before {
+	animation: zoomBeforeBG 4s ease-out forwards;
+}
+
+@keyframes zoomBeforeBG{
+    0% {
+        
+    }
+    100% {
+        transform: scale(1.0);
+		-webkit-filter: blur(0px);
+		-moz-filter: blur(0px);
+		-o-filter: blur(0px);
+		-ms-filter: blur(0px);
+		filter: blur(0px);
+		
+    }
+}
+
 section#projects:before {
     content: "";
     position: absolute;
@@ -323,6 +353,7 @@ section#contact:before {
     bottom: 0;
     z-index: 0;
     background-color: #05090d;
+	opacity: 1;
 }
 section#about .floatingSection {
     z-index: 1;
