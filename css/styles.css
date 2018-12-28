@@ -135,8 +135,9 @@ button, .button {
 }
 
 :not(.navigation) .button:hover {
-	box-shadow: 0px 0px 20px 1px #f50, inset 0px 0px 20px 1px #f50;
-	color: #ffee8d;
+	box-shadow: 0px 0px 20px 1px #f50, inset 0px 0px 20px 1px #ff8a50;
+	/*color: #fff6c0;*/
+	color: #fff;
 	background-color: #2f1f16;
 }
 
@@ -239,7 +240,7 @@ nav#navigation {
 .rippleCircle:after {
     opacity: 1;
 	content: "";
-	background-color: rgb(255, 240, 153, 0.14);
+	background-color: rgba(245, 238, 199, 0.33);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -453,7 +454,7 @@ button#soundcloud:before, button#soundcloud:after {
 
 .musicPlaying:after {
 	content: "";
-	background-color: rgb(255, 240, 153, 0.14);
+	background-color: rgba(245, 238, 199, 0.33);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -581,7 +582,7 @@ button#soundcloud:before, button#soundcloud:after {
 }
 
 #contact .button:hover:not(.middleContact) {
-	box-shadow: 0px 0px 12px 1px #f50, inset 0px 0px 20px 1px #f50;
+	box-shadow: 0px 0px 12px 1px #f50, inset 0px 0px 20px 1px #ff8a50;
 }
 
 .contactContainer a.button:first-child {
