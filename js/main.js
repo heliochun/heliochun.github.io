@@ -21,6 +21,9 @@ proLi.on('click', function() {
 			},50);
 		}
 	});
+	
+	//proLi.removeClass('navActive');
+	//$(this).addClass('navActive');
 });
 
 (function() {
