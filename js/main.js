@@ -1,262 +1,289 @@
-$(window).on('load',function(){
-	if($(window).width() < 616){
-		window.location = 'https://heliochun.github.io/card'
-	}
-});
+'use strict';
+// var mainDocument = $(document);
 
-var proLi = $('.navAnchor');
+// init foundation
+// $(document).foundation();
 
-proLi.on('click', function() {
-	var plAnch = $("#" + $(this).attr("data-anchor")),
-	domTarget = $("html,body");
-	domTargetOffset = plAnch.offset().top
-	domTarget.animate({
-		scrollTop: domTargetOffset
-	}, 200, function() {
-		if ($(window).width() < 1000) {
-			setTimeout(function(){
-				$('#navigation').removeClass('menuActive');
-				$('#dark-pane').addClass('hidden');
-				$('body').removeClass('no-scroll');
-			},50);
-		}
-	});
-	
-	//proLi.removeClass('navActive');
-	//$(this).addClass('navActive');
-});
-
-(function() {
-	var delay = false;
-
-	$(document).on('mousewheel DOMMouseScroll', function(event) {
-		if(!$('#project-loader').hasClass('slideContent')) {
-			event.preventDefault();
-			if(delay) return;
-
-			delay = true;
-			setTimeout(function(){delay = false},200)
-
-			var wd = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-
-			var a= document.getElementsByTagName('section');
-			if(wd < 0) {
-			  for(var i = 0 ; i < a.length ; i++) {
-				var t = a[i].getClientRects()[0].top;
-				if(t >= 40) break;
-			  }
-			}
-			else {
-			  for(var i = a.length-1 ; i >= 0 ; i--) {
-				var t = a[i].getClientRects()[0].top;
-				if(t < -20) break;
-			  }
-			}
-			
-			if(i >= 0 && i < a.length) {
-			  $('html,body').animate({
-				scrollTop: a[i].offsetTop
-			  }, 250);
-			}
-			
-		} // if has class
-	});
-})();
-
-$(document).on('scroll', function() {
-    if($(this).scrollTop()>=$('#about').position().top && $(this).scrollTop()<=$('#about').position().top){
-        $('#about').addClass('activeSection');
-    } else {
-		$('#about').removeClass('activeSection');
-	}
-	
-	if($(this).scrollTop()>=$('#projects').position().top && $(this).scrollTop()<=$('#projects').position().top){
-        $('#projects').addClass('activeSection');
-    } else {
-		$('#projects').removeClass('activeSection');
-	}
-})
-
-
-/* Material design Ripple effect */
-var b = document.querySelectorAll('.navButton');
-
-for (var i = 0; i < b.length; i++) {
-    c = b[i];
-    c.addEventListener('click', function(){
-        var that = this;
-        that.classList.add('rippleCircle');
-        setTimeout(function(){
-            that.classList.remove('rippleCircle');
-        },500);
-    });
-}
-
-/* SOUNDCLOUD */
-$(document).ready(function() {
-    var scid = $('#soundcloud');
-	var widget = SC.Widget(document.getElementById('soundcloud_widget'));
-	var is_playing = false;
-	
-	widget.bind(SC.Widget.Events.READY, function(){
-		scPlaying();
-	});
-	
-	function scPlaying(){
-		if(is_playing == false){
-			widget.play();
-			is_playing = true;
-			scid.toggleClass('musicPlaying musicPaused');
-		} else {
-			widget.pause();
-			is_playing = false;
-			scid.toggleClass('musicPlaying musicPaused');
+// Init all plugin when document is ready 
+$(document).on('ready', function () {
+	// 0. Init console to avoid error
+	var method;
+	var noop = function () { };
+	var methods = [
+		'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+		'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+		'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+		'timeStamp', 'trace', 'warn'
+	];
+	var length = methods.length;
+	var console = (window.console = window.console || {});
+	var contextWindow = $(window);
+	var $root = $('html, body');
+	while (length--) {
+		method = methods[length];
+		// Only stub undefined methods.
+		if (!console[method]) {
+			console[method] = noop;
 		}
 	}
-	widget.bind(SC.Widget.Events.FINISH, function(){
-		widget.play();
+
+	// 1. Background image as data attribut 
+	var list = $('.bg-img');
+	for (var i = 0; i < list.length; i++) {
+		var src = list[i].getAttribute('data-image-src');
+		list[i].style.backgroundImage = "url('" + src + "')";
+		list[i].style.backgroundRepeat = "no-repeat";
+		list[i].style.backgroundPosition = "center";
+		list[i].style.backgroundSize = "cover";
+	}
+	// Background color as data attribut
+	var list = $('.bg-color');
+	for (var i = 0; i < list.length; i++) {
+		var src = list[i].getAttribute('data-bgcolor');
+		list[i].style.backgroundColor = src;
+	}
+
+	// 2. Init Coutdown clock
+	try {
+		// check if clock is initialised
+		$('.clock-countdown').downCount({
+			date: $('.site-config').attr('data-date'),
+			offset: +10
+		});
+	}
+	catch (error) {
+		// Clock error : clock is unavailable
+		console.log("clock disabled/unavailable");
+	}
+
+	// 3. Show/hide menu when icon is clicked
+	var menuItems = $('.all-menu-wrapper .nav-link');
+	var menuIcon = $('.menu-icon, #navMenuIcon');
+	var menuBlock = $('.all-menu-wrapper');
+	var reactToMenu = $ ('.page-main, .navbar-sidebar, .page-cover')
+	var menuLinks = $(".navbar-mainmenu a, .navbar-sidebar a");
+	// Menu icon clicked
+	menuIcon.on('click', function () {
+		menuIcon.toggleClass('menu-visible');
+		menuBlock.toggleClass('menu-visible');
+		menuItems.toggleClass('menu-visible');
+		reactToMenu.toggleClass('menu-visible');
+		return false;
+	});
+
+	// Hide menu after a menu item clicked
+	menuLinks.on('click', function () {
+		menuIcon.removeClass('menu-visible');
+		menuBlock.removeClass('menu-visible');
+		menuItems.removeClass('menu-visible');
+		reactToMenu.removeClass('menu-visible');
+		return true;
+	});
+
+	// 4 Carousel Slider
+	new Swiper('.carousel-swiper-beta-demo .swiper-container', {
+		pagination: '.carousel-swiper-beta-demo .items-pagination',
+		paginationClickable: '.carousel-beta-alpha-demo .items-pagination',
+		nextButton: '.carousel-swiper-beta-demo .items-button-next',
+		prevButton: '.carousel-swiper-beta-demo .items-button-prev',
+		loop: true,
+		grabCursor: true,
+		centeredSlides: true,
+		autoplay: 5000,
+		autoplayDisableOnInteraction: false,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		breakpoints: {
+			1024: {
+				slidesPerView: 1,
+			},
+			800: {
+				slidesPerView: 1,
+				spaceBetween: 0
+			},
+			640: {
+				slidesPerView: 1,
+				spaceBetween: 0
+			},
+			440: {
+				slidesPerView: 1,
+				spaceBetween: 0
+			}
+		}
+	});
+	// 4.1 Slideshow slider
+	var imageList = $('.slide-show .img');
+	var imageSlides = [];
+	for (var i = 0; i < imageList.length; i++) {
+		var src = imageList[i].getAttribute('data-src');
+		imageSlides.push({ src: src });
+	}
+	$('.slide-show').vegas({
+		delay: 5000,
+		shuffle: true,
+		slides: imageSlides,
+		animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight']
 	});
 	
-    scid.on('click', function() {
-		scPlaying();
-    });
-});
+	// 5. Init video background
+	var videoBg = $('.video-container video, .video-container object');
 
-// Menu
-$('#fireMenu').on('click', function(){
-	$('#navigation').toggleClass('menuActive');
-	if ($('#dark-pane').hasClass('hidden')){
-		$('#dark-pane').removeClass('hidden');
-		$('body').addClass('no-scroll');
-	} else {
-		$('#dark-pane').addClass('hidden');
-		$('body').removeClass('no-scroll');
+	// 6. Prepare content for animation
+	$('.section .content .anim.anim-wrapped').wrap("<span class='anim-wrapper'></span>");
+
+	// 7. Init fullPage.js plugin
+	var pageSectionDivs = $('.page-fullpage .section');
+	var headerLogo = $('.header-top .logo');
+	var bodySelector = $('body');
+	var sectionSelector = $('.section');
+	var headerContainer = $('.hh-header');
+	var slideElem = $('.slide');
+	var arrowElem = $('.p-footer .arrow-d');
+	var pageElem = $('.section');
+	var pageSections = [];
+	var pageAnchors = [];
+	var nextSectionDOM;
+	var nextSection;
+	var fpnavItem;
+	var mainPage = $('#mainpage');
+	var sendEmailForm = $('.send_email_form');
+	var sendMessageForm = $('.send_message_form');
+	var scrollOverflow = true;
+	var css3 = true;
+	// disable scroll overflow on small device
+	if (contextWindow.width() < 601) {
+		scrollOverflow = false;
+		css3 = false;
 	}
-});
-
-$('#dark-pane').on('click', function(){
-	$('#navigation').removeClass('menuActive');
-	$('#dark-pane').addClass('hidden');
-	$('body').removeClass('no-scroll');
-});
-
-$(document).ready(function() {
-	if ($(window).width() > 1000) {
-		setTimeout(function(){
-			var wh2 = $('.welcome h2').height();
-			$('.welcome h2').height(wh2+10)
-			$(".welcome h2").scramble(1000, 10, "alphabet", true);
-		},50);
+	if (contextWindow.height() < 480) {
+		scrollOverflow = false;
+		css3 = false;
 	}
-});
-
-// Move body post images to actual Slider
-function checkBullets(){
-	// Add as many bullets as slides
-	var giEl = document.querySelectorAll('#featured-gallery img').length;
-	var bulletContainer = document.getElementById('slideBullets');
-	var bulletEl = '<span class="slideBullet"></span>';
-	for (var i = 0; i < giEl; i++) {
-		bulletContainer.insertAdjacentHTML('beforeend', bulletEl);
+	// Get sections name
+	for (var i = 0; i < pageSectionDivs.length; i++) {
+		pageSections.push(pageSectionDivs[i]);
 	}
-	jQuery('.slideBullet:first-child').addClass('currentBslider');
-}
+	window.asyncEach(pageSections, function (pageSection, cb) {
+		var anchor = pageSection.getAttribute('data-section');
+		pageAnchors.push(anchor + "");
+		cb();
+	}, function (err) {
+		// Init plugin
+		if (mainPage.width()) {
+			// config fullpage.js
+			mainPage.fullpage({
+				menu: '#qmenu',
+				anchors: pageAnchors,
+				verticalCentered: false,
+				css3: css3,
+				navigation: true,
+				responsiveWidth: 601,
+				responsiveHeight: 480,
+				scrollOverflow: scrollOverflow,
+				scrollOverflowOptions: {
+					click: true,
+					submit: true,
+				},
+				normalScrollElements: '.section .scrollable',
+				afterRender: function () {
+					// Fix video background
+					videoBg.maximage('maxcover');
 
-$(document).ready(function(){
-    $('.targetProject').on('click', function(){
-        $('#project-loader').addClass('slideContent');
-		$('body').addClass('no-scroll');
-		$("#project-loader").html('');
-		
-		if ($(this).data("project") === 'muffin') {
-			$("#project-loader").load('./p/muffin.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
+					// Fix for internet explorer : adjust content height
+					// Detect IE 6-11
+					var isIE = /*@cc_on!@*/false || !!document.documentMode;
+					if (isIE) {
+						var contentColumns = $('.section .content .c-columns');
+						contentColumns.height(contextWindow.height())
+						for (var i = 0; i < contentColumns.length; i++) {
+							if (contentColumns[i].height <= contextWindow.height()) {
+								contentColumns[i].style.height = "100vh";
+							}
+						}
+					}
+
+					// init contact form
+					// Default server url
+					var newsletterServerUrl = './ajaxserver/serverfile.php';
+					var messageServerUrl = './ajaxserver/serverfile.php';
+
+					// Use form define action attribute
+					if (sendEmailForm.attr('action') && (sendEmailForm.attr('action')) != '') {
+						newsletterServerUrl = sendEmailForm.attr('action');
+					}
+					if (sendMessageForm.attr('action') && (sendMessageForm.attr('action') != '')) {
+						messageServerUrl = sendMessageForm.attr('action');
+					}
+
+					sendEmailForm.initForm({
+						serverUrl: newsletterServerUrl,
+					});
+					sendMessageForm.initForm({
+						serverUrl: messageServerUrl,
+					});
+
+				},
+				afterResize: function () {
+					var pluginContainer = $(this);
+					$.fn.fullpage.reBuild();
+				},
+				onLeave: function (index, nextIndex, direction) {
+					// Behavior when a full page is leaved
+					arrowElem.addClass('gone');
+					pageElem.addClass('transition');
+					slideElem.removeClass('transition');
+					pageElem.removeClass('transition');
+				},
+				afterLoad: function (anchorLink, index) {
+					// Behavior after a full page is loaded
+					// hide or show clock
+					if ($('.section.active').hasClass('hide-clock')) {
+						headerContainer.addClass('gone');
+					} else {
+						headerContainer.removeClass('gone');
+					}
+				}
 			});
-		} else if ($(this).data("project") === 'gdev') {
-			$("#project-loader").load('./p/gdev.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
-			});
-		} else if ($(this).data("project") === 'svvg') {
-			$("#project-loader").load('./p/svvg.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
-			});
-		} else if ($(this).data("project") === 'narrowai') {
-			$("#project-loader").load('./p/narrowai.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
-			});
-		} else if ($(this).data("project") === 'tedcss') {
-			$("#project-loader").load('./p/tedcss.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
-			});
-		} else if ($(this).data("project") === 'datzo') {
-			$("#project-loader").load('./p/datzo.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
-			});
-		} else if ($(this).data("project") === 'baine') {
-			$("#project-loader").load('./p/baine.html', function(responseTxt, statusTxt, xhr){
-				checkBullets();
+
+		}
+	});
+	// Scroll to fullPage.js next/previous section
+	$('.scrolldown a, .scroll.down').on('click', function () {
+		try {
+			// fullpage scroll
+			$.fn.fullpage.moveSectionDown();
+		} catch (error) {
+			// normal scroll
+			$root.animate({
+				scrollTop: window.innerHeight
+			}, 400, function () {
 			});
 		}
-		
-		// Resets Photo Slider
-		slideIndex = 1;
-		showDivs(slideIndex);
-    });
+
+	});
+
+	// 8. Hide some ui on scroll
+	var scrollHeight = $(document).height() - contextWindow.height();
+	contextWindow.on('scroll', function () {
+		var scrollpos = $(this).scrollTop();
+		var siteHeaderFooter = $('.page-footer, .page-header');
+
+		// if (scrollpos > 10 && scrollpos < scrollHeight - 100) {
+		if (scrollpos > 100) {
+			siteHeaderFooter.addClass("scrolled");
+		}
+		else {
+			siteHeaderFooter.removeClass("scrolled");
+		}
+	});
+
+
+	// 9. Page Loader : hide loader when all are loaded
+	contextWindow.on('load', function () {
+		$('#page-loader').addClass('p-hidden');
+		$('.section').addClass('anim');
+	});
+
+
 });
-
-$('body').on('click', '#st-close', function(){
-	$('#project-loader').removeClass('slideContent');
-	$('body').removeClass('no-scroll');
-});
-
-$('body').on('click', '#featured-gallery', function(){
-	$('#lightBox').toggleClass('zoomSlider');
-});
-
-// ======================================================================= GDev Stuff 
-
-$('#fireEmail').on('click', function(){
-	$('.mail-container').addClass('show-mail');
-});
-
-$('.bottom-ball-fill, #closeEmail').on('click', function(){
-	$('.mail-container').removeClass('show-mail');
-});
-
-
-// PHOTO SLIDER
-
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName('lbSlide');
-  var dots = document.getElementsByClassName('slideBullet');
-  
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].classList.add('zoomOut');
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(' currentBslider', '');
-  }
-  x[slideIndex-1].classList.remove('zoomOut');
-  dots[slideIndex-1].className += ' currentBslider';
-  // Will error ClassName undefined because of dynamic content
-}
-
-
-// Slideshow buttons
-var lbbleft = document.getElementById('slider-left');
-var lbbright = document.getElementById('slider-right');
-
-lbbleft.addEventListener('click', function(evento) {plusDivs(-1);});
-lbbleft.addEventListener('click', function(evento) {plusDivs(1);});
-
 
