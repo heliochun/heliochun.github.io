@@ -2797,6 +2797,17 @@ textarea {
     z-index: -1;
     overflow: hidden;
 }
+
+/* Fix for no contact form slider */
+@media (min-width: 768px) {
+	#information .col-md-6 {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 55%;
+		max-width: 55%;
+	}
+}
+
+
 /* a. Page cover */
 .page-cover {
   width: 100%;
