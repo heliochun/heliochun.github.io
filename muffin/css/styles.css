@@ -1,0 +1,266 @@
+/*
+	Theme Name: Muffin
+	Theme Version: 1.0
+	Theme Date: 2017-09-04
+	Theme Author: Helio Chun
+	Theme Author URI: https://www.tedcss.blogspot.com
+*/
+*{box-sizing:border-box;}
+body {
+    margin: 0;
+    padding: 0;
+	font: 400 16px/24px Roboto,sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: #212121;
+    text-align: left;
+}
+a, a:active, a:link, a:visited {
+    text-decoration: none;
+    color: #039BE5;
+    transition: color .25s linear;
+}
+
+/* same same elements */
+.float-left{float:left;}
+.float-right{float:right;}
+.clear-float{clear:both;}
+.center-text {text-align: center;}
+
+
+.md-icon:before {
+	font-family: "Material Icons";
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga' 1;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* head bar */
+#masthead {
+    position: fixed;
+    height: 56px;
+    top: 0;
+    left: 0;
+    right: 0;
+	z-index: 100;
+	background-color: #fff;
+	box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.095);
+}
+.logo-wrapper {
+    width: 100%;
+    max-width: 400px;
+	margin: 10px auto;
+    text-align: center;
+}
+.logo {
+	height: 35px;
+    width: 35px;
+	display: inline-block;
+	background-image:url(../images/gd-logo.png);
+	background-size: contain;
+    background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+    vertical-align: bottom;
+}
+
+.logo-page-desc {
+	display: inline-block;
+    color: #3a3a3a;
+    font-size: 22px;
+    font-weight: 300;
+	line-height: normal;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid;
+	position: relative;
+    vertical-align: text-bottom;
+}
+
+/* body content */
+.top-section {
+    height: 330px;
+    background-image: url(../images/mshop-banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    background-attachment: fixed;
+    background-size: 100%;
+    position: relative;
+    padding-top: 53px;
+}
+.top-section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	color:#fff;
+	text-align: center;
+	text-shadow: 1px 1px 2px black;
+}
+.top-section-content h1 {
+    font-size: 50px;
+    font-weight: 300;
+	line-height: normal;
+	margin-bottom: 0;
+}
+
+.body-squeezer {
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto 0 auto;
+	text-align: center;
+}
+#body-container img {
+    max-width: 100%;
+}
+
+#learn-muffin {
+    max-width: 800px;
+    margin: 0 auto;
+	position: relative;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	margin-bottom: 25px;
+}
+#learn-muffin img {
+    display: block;
+}
+.yt-wrapper {
+	position: relative;
+	padding-bottom: 53.15%;
+	padding-top: 25px;
+	height: 0;
+}
+.yt-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.themeVideo {
+    width: 50%;
+    max-width: 200px;
+    cursor: pointer;
+    display: inline-block;
+	position: relative;
+}
+
+#learn-muffin .md-icon, .themeVideo .md-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+}
+#learn-muffin:hover .md-icon, .themeVideo:hover .md-icon {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.themeVideo .md-icon {
+	font-size: 50px;
+    width: 50px;
+    height: 120px;
+}
+
+#learn-muffin .md-icon:before, .themeVideo .md-icon:before {
+    content: "\E038";
+}
+#learn-muffin img, #learn-muffin .md-icon {
+    cursor: pointer;
+}
+
+.content-squeezer{
+	max-width:800px;
+	margin: 0 auto;
+}
+.content-squeezer ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+.content-squeezer ul li:before, .content-squeezer ul li:after {
+    content: "\2022";
+    margin: 0 7px;
+}
+
+.buy-wrapper {
+	display:table;
+	width: 100%;
+	margin-top: 40px;
+    margin-bottom: 60px;
+}
+.buy-info {
+    padding: 50px 0px;
+}
+.table-cell {
+    display: table-cell;
+	vertical-align: top;
+}
+.price-tag-not {
+    position: relative;
+    display: inline-block;
+    font-size: 70px;
+	color: #D32F2F;
+	margin-right: 1.5rem;
+}
+.price-tag-not:before {
+    position: absolute;
+    content: "";
+    left: -10px;
+    top: 50%;
+    /* right: 0; */
+    width: 123%;
+    border-top: 5px solid;
+    border-color: inherit;
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-18deg);
+}
+.price-tag-now {
+    display: inline-block;
+    font-size: 70px;
+    color: #4CAF50;
+}
+.price-tag-info {
+	font-size: 13px;
+    font-weight: bold;
+}
+
+#footer {
+    background-color: #eee;
+}
+.footer-wrapper {
+    width: 90%;
+    margin: 0 auto;
+	padding-top: 35px;
+    padding-bottom: 40px;
+}
+.hc-footer {
+    font-size: 28px;
+    font-weight: 600;
+    color: #757575;
+}
+
+.hc-footer img {
+    max-height: 50px;
+}
+
+@media (max-width: 600px) {
+	.top-section {
+		background-size: cover;
+	}
+	.table-cell {
+		display: block;
+	}
+}
+
