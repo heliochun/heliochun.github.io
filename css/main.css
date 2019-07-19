@@ -155,34 +155,34 @@ p {
 .btn-primary {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #67a299; }
+  background-color: #253144; }
   .btn-primary.active, .btn-primary:active {
     color: #ffffff;
-    background-color: #507772; }
+    background-color: #32425a; }
   .btn-primary:hover, .btn-primary:focus {
     color: #ffffff;
-    background-color: #507772;
-    border-color: #507772; }
+    background-color: #32425a;
+    border-color: #32425a; }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #ffffff;
     opacity: 0.7;
-    background-color: #507772; }
+    background-color: #32425a; }
 
 .btn-secondary {
   color: #ffffff;
   border: 1px solid transparent;
-  background-color: #3f4b62; }
+  background-color: #9e8257; }
   .btn-secondary.active, .btn-secondary:active {
     color: #ffffff;
-    background-color: #2b3343; }
+    background-color: #806947; }
   .btn-secondary:hover, .btn-secondary:focus {
     color: #ffffff;
-    background-color: #2b3343;
-    border-color: #2b3343; }
+    background-color: #806947;
+    border-color: #806947; }
   .btn-secondary.disabled, .btn-secondary:disabled {
     color: #ffffff;
     opacity: 0.7;
-    background-color: #2b3343; }
+    background-color: #806947; }
 
 .btn-white {
   color: #67a299;
@@ -461,18 +461,18 @@ p {
         left: 0.25rem; }
 
 .btn-circicon-outline.btn-primary {
-  color: #67a299; }
+  color: #664b94; }
   .btn-circicon-outline.btn-primary .icon {
-    background: #67a299;
+    background: #664b94;
     color: #ffffff; }
   .btn-circicon-outline.btn-primary.active, .btn-circicon-outline.btn-primary:active, .btn-circicon-outline.btn-primary:hover {
-    color: #67a299;
+    color: #664b94;
     background: rgba(176, 43, 76, 0.2); }
     .btn-circicon-outline.btn-primary.active .icon, .btn-circicon-outline.btn-primary:active .icon, .btn-circicon-outline.btn-primary:hover .icon {
       color: #ffffff; }
   .btn-circicon-outline.btn-primary.disabled, .btn-circicon-outline.btn-primary:disabled {
     color: #ffffff;
-    background-color: #67a299; }
+    background-color: #664b94; }
 
 .btn-circicon-outline.btn-secondary {
   color: #3f4b62; }
@@ -1734,39 +1734,39 @@ textarea {
             box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.1); }
 
 .price-item.price-item-primary .item-name {
-  color: #67a299; }
+  color: #253144; }
 
 .price-item.price-item-primary .item-price {
-  background: #67a299; }
+  background: #253144; }
 
 .price-item.price-item-primary .item-features li.ok .icon {
-  color: #67a299; }
+  color: #253144; }
 
 .price-item.price-item-primary.featured {
-  background: #5e8e87; }
+  background-color: rgba(13, 25, 43, 0.58); }
   .price-item.price-item-primary.featured .item-name {
     color: #ffffff; }
   .price-item.price-item-primary.featured .item-price {
-    color: #67a299;
+    color: #253144;
     background: #ffffff; }
   .price-item.price-item-primary.featured .item-features li.ok .icon {
     color: #ffffff; }
 
 .price-item.price-item-secondary .item-name {
-  color: #3f4b62; }
+  color: #9e8257; }
 
 .price-item.price-item-secondary .item-price {
-  background: #3f4b62; }
+  background-color: #9e8257; }
 
 .price-item.price-item-secondary .item-features li.ok .icon {
-  color: #3f4b62; }
+  color: #9e8257; }
 
 .price-item.price-item-secondary.featured {
-  background: #3f4b62; }
+  background: #9e8257; }
   .price-item.price-item-secondary.featured .item-name {
     color: #ffffff; }
   .price-item.price-item-secondary.featured .item-price {
-    color: #3f4b62;
+    color: #9e8257;
     background: #ffffff; }
   .price-item.price-item-secondary.featured .item-features li.ok .icon {
     color: #ffffff; }
@@ -2785,7 +2785,7 @@ textarea {
 
 /* 1.5 . Additional UI */
 .chun-bg {
-    background-image: url(../img/010.png);
+    background-image: url(../img/body-shot.png);
     background-repeat: no-repeat;
     background-position: right 30% center;
     background-size: 35vh;
