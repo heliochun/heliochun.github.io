@@ -1,0 +1,343 @@
+/*
+	Theme Name: Muffin
+	Theme Version: 1.2
+	Theme Date: 2017-09-04
+	Theme Version Update Date: 2017-10-14
+	Theme Landing Page: https://heliochun.github.io/muffin
+	
+	Theme Author: Helio Chun
+	Theme Author URI: https://twitter.com/TweetChun
+	Theme Author Blog: https://www.tedcss.blogspot.com
+*/
+
+* {
+    box-sizing: border-box;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+    font: 400 16px/22px Roboto,sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+	color: #212121;
+	background-color: #fafafa;
+	text-align: left;
+	padding: 0;
+    margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Links */
+a, a:link, a:visited, a:active {
+	text-decoration: none;
+	color: #039BE5;
+}
+
+a:hover, a:active {
+	color: #039BE5;
+}
+
+/* Header and Wrappers */
+.streamProfileWrapper {
+    max-width: 850px;
+    margin: 0 auto;
+}
+.streamProfileInner {
+    display: grid;
+    grid-template-columns: -webkit-max-content 1fr;
+    grid-template-columns: max-content 1fr;
+	padding: 30px;
+}
+.spaWrapper, .spcWrapper {
+    display: table-cell;
+    vertical-align: top;
+}
+
+/* Grid Cells */
+.spaWrapper {
+    width: auto;
+    grid-column: 1;
+	flex-grow: 0;
+	vertical-align: top;
+}
+.spcWrapper {
+    width: auto;
+    grid-column: 2;
+	flex-shrink: 1;
+	vertical-align: top;
+	min-width: 0;
+}
+
+/* Avatar */
+.spAvatar {
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-image: url(../img/4.jpg);
+	margin: 0 40px 25px 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Stream Profile Content */
+.spHeader {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.spHeader h3 {
+    color: #3c3c3c;
+	font-size: 30px;
+	margin: 0;
+	font-weight: 500;
+}
+
+.spHeader a {
+    background-color: #3ca773;
+    color: #fff;
+	
+	display: block;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 15px;
+    margin: 0 0 0 18px;
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* Mail me icon */
+a.mail-me {
+    padding: 6px 10px;
+	margin-left: 6px;
+}
+
+a.mail-me i {
+    font-size: 1.3rem;
+    padding: 0px 0px;
+    vertical-align: middle;
+}
+
+ul.spMeta {
+    list-style: none;
+    padding: 12px 0 15px;
+    margin: 0;
+}
+
+.spMeta li {
+    display: inline-block;
+    margin: 0 14px 0 0;
+    padding: 0 18px 0 0;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 14px;
+}
+
+.spMeta li:before {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 50%;
+    width: 2px;
+    height: 2px;
+    margin-top: -1px;
+    border-radius: 50%;
+    background: #545454;
+}
+
+.spMeta li:last-child:before {
+    display: none;
+}
+
+.spMeta b {
+    font-weight: bold;
+}
+
+.spBio {
+    color: #9e9e9e;
+}
+
+/* Gallery */
+
+.streamGalleryWrapper {
+    max-width: 935px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Gallery Cells */
+
+.sgCell {
+    display: inline-block;
+    position: relative;
+    width: 30%;
+	max-width: 300px;
+	overflow: hidden;
+}
+
+.sgCell:hover img {
+    transform: scale(1.3);
+}
+
+.sgCell a {
+    display: flex;
+}
+
+.sgCell img {
+    width: 100%;
+	transition: transform .4s;
+}
+
+.sgCell:hover .mask {
+    opacity: 0.9;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+	background-color: #000;
+	transition: opacity .4s;
+}
+
+.sgCell:hover .description {
+    opacity: 1;
+	transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(2);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+    line-height: initial;
+    white-space: nowrap;
+	opacity: 0;
+	transition: opacity .4s, transform .4s;
+}
+
+/* Social icons */
+
+
+.followWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+	opacity: 0;
+	transform: scale(2);
+	transition: opacity .4s, transform .4s;
+	visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
+
+#showSocial.show {
+	transform: scale(1);
+	opacity: 0.9;
+}
+
+.followMe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.socialCell {
+    width: 30%;
+    display: inline-block;
+    max-width: 100px;
+}
+.socialCell img {
+    width: 100%;
+}
+
+/* Media Screens */
+
+@media (max-width: 735px) {
+	
+	.streamProfileInner {
+		display: block;
+	}
+	
+	.spHeader {
+		display: block;
+	}
+	
+	.spaWrapper {
+		height: 77px;
+		width: 77px;
+		float: left;
+		-webkit-flex: auto;
+		flex: auto;
+	}
+	.spAvatar {
+		height: 77px;
+		width: 77px;
+		display: table-cell;
+	}
+	
+	.spcWrapper {
+		display: block;
+	}
+	
+	.spHeader h3 {
+		margin-left: 102px;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		line-height: 24px;
+		font-size: 24px;
+		width: 150px;
+	}
+	
+	#getSocial {
+		margin-left: 24px;
+	}
+	
+	.spHeader a {
+		margin: 18px 0 18px 0;
+		text-align: center;
+		padding: 8px 15px;
+		display: inline-block;
+		margin-left: 0;
+	}
+	
+	
+	.spMeta {
+		text-align: center;
+		border-top: 1px solid #efefef;
+	}
+	
+	.spMeta li {
+		font-size: 12px;
+		margin: 0 2.5%;
+		/* padding: 0 2.5%; */
+		text-align: center;
+	}
+	
+	.spMeta li b {
+		display: block;
+	}
+	
+}
+
+
+
+
