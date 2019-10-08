@@ -268,6 +268,36 @@ ul.spMeta {
     width: 100%;
 }
 
+/* TABS */
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	border-top: 1px solid #efefef;
+}
+ul.tabs li{
+	background: none;
+	color: #9e9e9e;
+	display: inline-block;
+	padding: 15px;
+	cursor: pointer;
+	text-transform: uppercase;
+    font-size: 14px;
+}
+
+ul.tabs li.current{
+	border-top: 1px solid #262626;
+	color: #262626;
+}
+
+.tab-content{
+	display: none;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+
 /* Media Screens */
 
 @media (min-width: 735px) {
@@ -277,6 +307,10 @@ ul.spMeta {
 	}
 	.spAvatar {
 		margin: 0 75px 25px 30px;
+	}
+	
+	.sgCell {
+		margin: 8px;
 	}
 }
 
@@ -344,6 +378,11 @@ ul.spMeta {
 	
 	.spMeta li b {
 		display: block;
+	}
+	
+	/* TABS */
+	ul.tabs li{
+		font-size: 12px;
 	}
 	
 }
