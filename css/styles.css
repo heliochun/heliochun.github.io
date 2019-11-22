@@ -30,6 +30,11 @@ body {
 	overflow-y: auto;
 }
 
+#body.std {
+    margin-top: -18px;
+    position: relative;
+}
+
 .noScroll {
     overflow: hidden;
 }
