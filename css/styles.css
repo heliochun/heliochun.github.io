@@ -16,6 +16,7 @@
 html {
 	position: relative;
 	min-height: 100%;
+	font: 400 16px/22px Roboto,sans-serif;
 }
 body {
     font: 400 16px/22px Roboto,sans-serif;
