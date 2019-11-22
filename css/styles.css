@@ -329,14 +329,15 @@ a.topBarLogo {
     background-position: center;
     height: 400px;
     position: relative;
+	background-color: #f4f4f4;
 }
 
 .viewThemeBanner.muffin-banner {
-    background-image: url(../images/other/muffin-banner.jpg);
+    background-image: url(https://1.bp.blogspot.com/-m7c6AmCj0eE/XdgMjYWGpDI/AAAAAAAAA-4/IIMLhCukTwsiEUAxK232X4xYQ54iKMqvgCLcBGAsYHQ/s0/muffin-banner.jpg);
 }
 
 .viewThemeBanner.frapuchino-banner {
-    background-image: url(../images/other/frapuchino-banner.jpg);
+    background-image: url(https://1.bp.blogspot.com/-TFwkFQOUbBg/XdgMjT-5UNI/AAAAAAAAA-0/-_PfpPHYZeUnoN5EjXEbx7mfACX8zE1KwCLcBGAsYHQ/s0/frapuchino-banner.jpg);
 }
 
 .bannerInfo {
@@ -574,6 +575,19 @@ h1.section-title {
 }
 
 
+.striped-bar {
+    background: url(../images/other/striped-bar.svg) top repeat-x;
+    background-size: auto 15px;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 5px;
+}
+
+.feedback-discuss {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+}
 
 
 /* ---------------------- */
