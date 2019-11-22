@@ -49,8 +49,8 @@
 	<link rel="stylesheet" href="../../css/styles.css?v=25"/>
 	<link rel="stylesheet" href="../../css/shop.css?v=25"/>
 	
-	<!-- Ninja Slider -->
-	<link rel="stylesheet" href="../../css/ninja-slider.css"/>
+	<!-- Swiper Slider -->
+	<link rel="stylesheet" href="../../css/swiper.css"/>
 
 	<!-- JS files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -246,25 +246,60 @@
 						<h1 class="split-title">Screenshots</h1>
 						
 						<!-- Image Slider -->
-						<div id="ninja-slider">
-							<div class="slider-inner">
-								<ul>
-									<li><a class="ns-img" href="screenshots/login.gif"></a></li>
-									<li><a class="ns-img" href="screenshots/checkboxes.gif"></a></li>
-									<li><a class="ns-img" href="screenshots/notifications.gif"></a></li>
-									
-									<li><a class="ns-img" href="screenshots/screenshot-10.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-1.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-2.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-3.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-4.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-5.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-6.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-7.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-8.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/screenshot-9.jpg"></a></li>
-								</ul>
-								<div class="fs-icon" title="Expand/Close"></div>
+						<div class="slider-container">
+							<div class="slider-wrapper">
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<!-- Gifs in Slider -->
+										<div class="swiper-slide">
+											<img src="screenshots/login.gif"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/checkboxes.gif"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/notifications.gif"/>
+										</div>
+										
+										<!-- Images in Slider -->
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-10.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-1.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-2.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-3.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-4.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-5.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-6.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-7.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-8.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/screenshot-9.jpg"/>
+										</div>
+									</div>
+										
+									<!-- Add Pagination -->
+									<div class="swiper-pagination"></div>
+									<!-- Add Arrows -->
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
 							</div>
 						</div>
 						
@@ -285,7 +320,7 @@
 	<script src="../../js/shop.js"></script>
 	<script src="../../js/shop_muffin.js"></script>
 	
-	<script src="../../js/ninja-slider.js"></script>
+	<script src="../../js/swiper.min.js"></script>
   
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

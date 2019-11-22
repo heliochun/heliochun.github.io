@@ -49,8 +49,8 @@
 	<link rel="stylesheet" href="../../css/styles.css?v=25"/>
 	<link rel="stylesheet" href="../../css/shop.css?v=25"/>
 	
-	<!-- Ninja Slider -->
-	<link rel="stylesheet" href="../../css/ninja-slider.css"/>
+	<!-- Swiper Slider -->
+	<link rel="stylesheet" href="../../css/swiper.css"/>
 
 	<!-- JS files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -267,18 +267,38 @@
 						
 						<h1 class="split-title">Screenshots</h1>
 						
-						<!-- Image Slider -->
-						<div id="ninja-slider">
-							<div class="slider-inner">
-								<ul>
-									<li><a class="ns-img" href="screenshots/frapuchino-1.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/frapuchino-2.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/frapuchino-3.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/frapuchino-4.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/frapuchino-5.jpg"></a></li>
-									<li><a class="ns-img" href="screenshots/frapuchino-6.jpg"></a></li>
-								</ul>
-								<div class="fs-icon" title="Expand/Close"></div>
+						
+						<!-- Swiper -->
+						<div class="slider-container">
+							<div class="slider-wrapper">
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="screenshots/frapuchino-1.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/frapuchino-2.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/frapuchino-3.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/frapuchino-4.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/frapuchino-5.jpg"/>
+										</div>
+										<div class="swiper-slide">
+											<img src="screenshots/frapuchino-6.jpg"/>
+										</div>
+									</div>
+									
+									<!-- Add Pagination -->
+									<div class="swiper-pagination"></div>
+									<!-- Add Arrows -->
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
 							</div>
 						</div>
 						
@@ -299,7 +319,7 @@
 	<script src="../../js/shop.js"></script>
 	<script src="../../js/shop_muffin.js"></script>
 	
-	<script src="../../js/ninja-slider.js"></script>
+	<script src="../../js/swiper.min.js"></script>
 	
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
