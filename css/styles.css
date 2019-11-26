@@ -81,6 +81,7 @@ a:hover, a:active {
     text-decoration: none;
     -webkit-transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
     transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+	white-space: nowrap;
 }
 
 .button:hover {
@@ -243,6 +244,100 @@ a:hover, a:active {
 	padding: .5rem 1.5rem;
 }
 
+.topBar.bottomBar {
+    position: fixed;
+    z-index: 999999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+	height: 56px;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px 0 rgba(0,0,0,0.15);
+}
+
+.topBar.bottomBar .price-desccription {
+    text-align: left;
+    line-height: normal;
+}
+
+.menuIcon {
+    display: none;
+    width: 26px;
+    height: 26px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/icons/menu-24px.svg);
+	margin-right: 12px;
+}
+
+.mobileNavContainer {
+    position: relative;
+	display: none;
+}
+
+.mobileSelectedNav {
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.15);
+    color: #3c4043;
+    font-size: 14px;
+    padding: .3rem 1rem;
+    border-radius: 16px;
+    width: 100%;
+    text-align: center;
+	white-space: nowrap;
+}
+.mobileSelectedNav:after {
+	content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/icons/arrow_drop_down-24px.svg);
+    margin-left: 4px;
+	margin-right: -4px;
+    vertical-align: text-top;
+}
+
+.mobileNav {
+	box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+    will-change: opacity,transform;
+    transition: opacity .3s cubic-bezier(.175,.885,.22,1.105),transform .3s cubic-bezier(.175,.885,.22,1.105);
+    transform: scale(.2) translate3d(0,0,0);
+    transform-origin: 60% 0;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 4px;
+    z-index: 2;
+	backface-visibility: hidden;
+}
+
+.mobileNav.showMenu {
+    transform: scale(1) translate3d(0,0,0);
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.mobileNav a {
+    display: block;
+    padding: .6rem 1rem;
+	color: #3c4043;
+	font-size: 14px;
+}
+
+.mobileNav-item.selected-mobileNav {
+    background-color: #eeeeee;
+	pointer-events: none;
+}
+
 a.topBarLogo {
     width: 50px;
 	height: 50px;
@@ -282,7 +377,7 @@ a.topBarLogo {
 }
 
 .not-flex-middle {
-    width: 35%;
+    width: 50%;
 }
 
 .tfm-wrapper {
@@ -299,6 +394,10 @@ a.topBarLogo {
     font-size: 14px;
     font-weight: 500;
     line-height: 14px;
+}
+
+.additional-desccription {
+    white-space: nowrap;
 }
 
 .additional-price-txt {
@@ -389,6 +488,12 @@ h1.section-title {
     display: none;
 }
 
+.anchor-btn {
+    color: #039BE5;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
 .anchor-btn:after {
     content: "";
     display: inline-block;
@@ -400,10 +505,6 @@ h1.section-title {
     background-image: url(../images/icons/arrow_downward-24px.svg);
 }
 
-.anchor-btn {
-    color: #039BE5;
-	cursor: pointer;
-}
 
 
 .youtubeLink {
@@ -545,6 +646,7 @@ h1.section-title {
 .split-title {
     margin-top: 0;
 	color: #7e7e7e;
+	line-height: normal;
 }
 
 .split-text {
@@ -934,14 +1036,91 @@ ul.tabs li.current{
 	MEDIA QUERIES
 	##################### */
 
-
-@media (min-width: 735px) {
+@media (max-width: 1024px) {
+	
+	.splitContent {
+		padding: 4rem 0rem;
+	}
+	.splitContent-image, .vertical-imageDisplay {
+		margin-bottom: 2rem;
+	}
+	
+	.notice {
+		padding: 1rem 1rem 1rem 3rem;
+	}
 	
 }
 
-@media (max-width: 735px) {
+@media (min-width: 769px) {
 	
+	.notDesktop {
+		display: none;
+	}
 	
+}
+
+@media (max-width: 768px) {
+	
+	.notMobile {
+		display: none;
+	}
+	
+	.mobileNavContainer {
+		display: block;
+	}
+	
+	.menuIcon {
+		display: inline-block;
+	}
+	
+	.nav.tfm-wrapper {
+		display: none;
+	}
+	
+	.bannerInfo {
+		left: 0;
+		padding: 0 2rem;
+	}
+	
+	.contentSqueezer {
+		margin: 0 .5rem;
+	}
+	
+	.splitContent {
+		margin: 2rem 0;
+		padding: 2rem;
+	}
+	
+	.splitLeft, .splitRight {
+		width: 100%;
+		padding: 0;
+	}
+	
+	.split-text {
+		font-size: 1rem;
+		line-height: 1.65;
+	}
+	
+	.vertical-imageDisplay {
+		text-align: center;
+	}
+	
+	.vertical-imageDisplay img {
+		max-height: 300px;
+	}
+	
+}
+
+@media (max-width: 425px) {
+	
+	.viewThemeBanner .section-title {
+		line-height: normal;
+		margin-bottom: 4rem;
+	}
+	
+	.splitContent-description {
+		text-align: center;
+	}
 	
 }
 

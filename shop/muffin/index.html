@@ -45,7 +45,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   
 	<!-- Main CSS files -->
-	<link rel="stylesheet" href="../../css/styles.css?v=27"/>
+	<link rel="stylesheet" href="../../css/styles.css?v=28"/>
 	<link rel="stylesheet" href="../../css/shop.css?v=26"/>
 	
 	<!-- Swiper Slider -->
@@ -86,20 +86,35 @@
 				</div>
 			</div>
 			<div class="flex-item not-flex-middle">
-				<div class="price-desccription">
-					<span class="is-price">29.99€</span>
-					<div class="additional-desccription">
-						<span class="additional-price-txt">Muffin theme</span>
+				
+				<div class="notMobile">
+					<div class="price-desccription">
+						<span class="is-price">29.99€</span>
+						<div class="additional-desccription">
+							<span class="additional-price-txt">Muffin theme</span>
+						</div>
 					</div>
 				</div>
 				
 				<!-- Purchase -->
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="83TKJ86P42SSE">
-					<button class="button primary" type="image" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">Buy Now</button>
-					<img alt="" border="0" src="https://www.paypalobjects.com/pt_PT/i/scr/pixel.gif" width="1" height="1">
-				</form>
+				<div class="notMobile">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="83TKJ86P42SSE">
+						<button class="button primary" type="image" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">Buy Now</button>
+						<img alt="" border="0" src="https://www.paypalobjects.com/pt_PT/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+				
+				<!-- Mobile Navigation -->
+				<div class="mobileNavContainer">
+					<div class="mobileSelectedNav current-mobileNav">Muffin</div>
+					<div class="mobileNav">
+						<a href="https://heliochun.github.io/" class="mobileNav-item">Overview</a>
+						<a href="https://heliochun.github.io/shop" class="mobileNav-item">Shop</a>
+						<a href="https://heliochun.github.io/feedback" class="mobileNav-item">Feedback</a>
+					</div>
+				</div>
 
 			</div>
 		</div>
@@ -310,12 +325,36 @@
 	
 	</div> <!-- body-content -->
 
+	<!-- Bottom Sticky-bar -->
+	<div class="notDesktop">
+		<div class="topBar bottomBar">
+			<div class="topBar-wrapper flex-row">
+				<div class="flex-item not-flex-middle">
+					<div class="price-desccription">
+						<span class="is-price">29.99€</span>
+						<div class="additional-desccription">
+							<span class="additional-price-txt">Muffin theme</span>
+						</div>
+					</div>
+				</div>
 
+				<div class="flex-item not-flex-middle">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="83TKJ86P42SSE">
+						<button class="button primary" type="image" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">Buy Now</button>
+						<img alt="" border="0" src="https://www.paypalobjects.com/pt_PT/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	
 </div> <!-- End body-container -->
 
 	<!-- Javascript main files -->
+	<script src="../../js/main.js?v=34"></script>
 	<script src="../../js/sticky_bar.js"></script>
 	<script src="../../js/shop.js"></script>
 	<script src="../../js/shop_muffin.js"></script>

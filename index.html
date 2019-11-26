@@ -43,7 +43,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
 	<!-- Main CSS files -->
-	<link rel="stylesheet" href="css/styles.css?v=27"/>
+	<link rel="stylesheet" href="css/styles.css?v=28"/>
 
 	<!-- JS files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -63,6 +63,7 @@
 		</div>
 	</div>
 	
+	<!-- Top Sticky-bar -->
 	<div id="topBar" class="topBar">
 		<div class="topBar-wrapper flex-row">
 			<div class="flex-item not-flex-middle">
@@ -78,8 +79,21 @@
 				</div>
 			</div>
 			<div class="flex-item not-flex-middle">
-				<button id="getSocial" class="button button-outline">Follow</button>
-				<a href="mailto:gdev.business@gmail.com?Subject=Website%20development" title="gdev.business@gmail.com" class="button button-outline">Contact</a>
+				<div class="notMobile">
+					<button id="getSocial" class="button button-outline">Follow</button>
+					<a href="mailto:gdev.business@gmail.com?Subject=Website%20development" title="gdev.business@gmail.com" class="button button-outline">Contact</a>
+				</div>
+				
+				<!-- Mobile Navigation -->
+				<div class="mobileNavContainer">
+					<div class="mobileSelectedNav current-mobileNav">Overview</div>
+					<div class="mobileNav">
+						<a href="https://heliochun.github.io/" class="mobileNav-item selected-mobileNav">Overview</a>
+						<a href="https://heliochun.github.io/shop" class="mobileNav-item">Shop</a>
+						<a href="https://heliochun.github.io/feedback" class="mobileNav-item">Feedback</a>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -240,6 +254,21 @@
 	</article>
 	
 	</div> <!-- body-content -->
+	
+	<!-- Bottom Sticky-bar -->
+	<div class="notDesktop">
+		<div class="topBar bottomBar">
+			<div class="topBar-wrapper flex-row">
+				<div class="flex-item not-flex-middle">
+					<a href="mailto:gdev.business@gmail.com?Subject=Website%20development" title="gdev.business@gmail.com" class="button button-outline">Contact</a>
+				</div>
+
+				<div class="flex-item not-flex-middle">
+					<button id="getSocial" class="button button-outline">Follow</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="showSocial" class="followContainer">
 		<div class="followWrapper">
@@ -270,7 +299,7 @@
 </div> <!-- End body-container -->
 
 	<!-- Javascript main files -->
-	<script src="js/main.js?v=33"></script>
+	<script src="js/main.js?v=34"></script>
 	<script src="js/sticky_bar.js"></script>
 	<script src="js/social.js"></script>
   
