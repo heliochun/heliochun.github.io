@@ -671,6 +671,10 @@ h1.section-title {
     max-width: 200% !important;
 }
 
+.splitContent-image .splitImage-full {
+    width: 100%;
+}
+
 
 #screenshots {
     margin: 8rem 0;
