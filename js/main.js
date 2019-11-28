@@ -6,10 +6,10 @@ $(document).ready(function(){
 		var tab_id = $(this).attr('data-tab');
 
 		$('ul.tabs li').removeClass('current');
-		$('.tab-content').removeClass('current');
 
 		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
+		$('#tabsContent').removeAttr('class');
+		$('#tabsContent').addClass('slide-'+tab_id);
 	});
 	
 	$('.mobileSelectedNav').click(function(){

@@ -415,7 +415,7 @@ a.topBarLogo {
 	##################### */
 
 .body-header {
-    margin-top: 6rem;
+	margin-top: 2rem;
 }
 
 .body-content {
@@ -743,6 +743,7 @@ h1.section-title {
     color: #3c3c3c;
 	font-size: 30px;
 	margin: 0;
+	margin-top: 1rem;
 	font-weight: 300;
 }
 
@@ -811,6 +812,8 @@ ul.spMeta {
 
 .spBio {
     color: #828286;
+	max-width: 500px;
+    margin: 0 auto;
 }
 
 /* ---------------------- */
@@ -894,6 +897,7 @@ ul.spMeta {
     left: 0;
     right: 0;
     bottom: 0;
+	z-index: 999999;
     background-color: #fff;
 	opacity: 0;
 	transition: all .2s cubic-bezier(.4,0,.2,1);
@@ -929,10 +933,11 @@ ul.spMeta {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+	text-align: center;
 }
 
 .socialCell {
-    width: 30%;
+    width: 18%;
     display: inline-block;
     max-width: 100px;
 }
@@ -967,13 +972,30 @@ ul.tabs li.current{
 	color: #262626;
 }
 
-.tab-content{
-	display: none;
+#tabs-container {
+    overflow: hidden;
 }
 
-.tab-content.current{
-	display: inherit;
+#tabsContent {
+    display: flex;
+    width: 100%;
+	will-change: transform;
+    transition: transform .3s cubic-bezier(.4,0,.2,1);
 }
+
+.tab-content{
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.slide-tab-1 {
+    transform: translateX(0);
+}
+
+.slide-tab-2 {
+    transform: translateX(-100%);
+}
+
 
 /* ---------------------- */
 
@@ -1039,6 +1061,13 @@ ul.tabs li.current{
 /*	#####################
 	MEDIA QUERIES
 	##################### */
+
+@media (min-width: 1024px) {
+	.spAvatar {
+		width: 250px;
+		height: 250px;
+	}
+}
 
 @media (max-width: 1024px) {
 	
