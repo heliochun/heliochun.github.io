@@ -444,15 +444,15 @@ body.black-friday .viewThemeBanner.muffin-banner {
     background-image: url(../shop/muffin/images/muffin-banner-bf.jpg);
 }
 
-body.black-friday .bannerInfo * {
+body.blackfriday-item .viewThemeBanner.muffin-banner .bannerInfo * {
     color: #fff;
 }
 
-body.black-friday .bannerInfo .anchor-buttons span:before {
+body.blackfriday-item .muffin-banner .bannerInfo .anchor-buttons span:before {
     color: #a7a7a7;
 }
 
-body.black-friday .bannerInfo a {
+body.blackfriday-item .bannerInfo a {
     text-decoration: underline;
 }
 
