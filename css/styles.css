@@ -460,6 +460,11 @@ body.black-friday .promoBar {
     background-color: #000;
 }
 
+body.black-friday .csMuffin .carousel-slide-wrapper {
+    background-color: #191919;
+    color: #fff;
+}
+
 .bannerInfo {
     position: absolute;
     left: 10rem;
@@ -1073,6 +1078,11 @@ ul.tabs li.current{
 	margin-top: 1rem;
     margin-bottom: 1.5rem;
     display: inline-block;
+}
+
+.was-price {
+    opacity: 0.6;
+    text-decoration: line-through;
 }
 
 
