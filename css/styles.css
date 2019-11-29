@@ -440,6 +440,26 @@ a.topBarLogo {
     background-image: url(https://1.bp.blogspot.com/-TFwkFQOUbBg/XdgMjT-5UNI/AAAAAAAAA-0/-_PfpPHYZeUnoN5EjXEbx7mfACX8zE1KwCLcBGAsYHQ/s0/frapuchino-banner.jpg);
 }
 
+body.black-friday .viewThemeBanner.muffin-banner {
+    background-image: url(../shop/muffin/images/muffin-banner-bf.jpg);
+}
+
+body.black-friday .bannerInfo * {
+    color: #fff;
+}
+
+body.black-friday .bannerInfo .anchor-buttons span:before {
+    color: #a7a7a7;
+}
+
+body.black-friday .bannerInfo a {
+    text-decoration: underline;
+}
+
+body.black-friday .promoBar {
+    background-color: #000;
+}
+
 .bannerInfo {
     position: absolute;
     left: 10rem;
