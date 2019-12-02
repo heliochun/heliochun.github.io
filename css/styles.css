@@ -195,6 +195,14 @@ a:hover, a:active {
 	color: #fff;
 }
 
+.dark-promoBar {
+    background-color: #3f314b;
+}
+
+.blackFriday-promoBar {
+    background-color: #000;
+}
+
 .promoBar-wrapper {
     margin: 0 1.5rem;
 }
