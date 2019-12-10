@@ -431,6 +431,10 @@ a.topBarLogo {
     margin: 3rem 0;
 }
 
+.product-page .body-content {
+    margin-top: 0;
+}
+
 .viewThemeBanner {
     background-size: cover;
     background-repeat: no-repeat;
