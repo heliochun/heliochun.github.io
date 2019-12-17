@@ -3,12 +3,12 @@
 
 <html class="no-js" lang="en">
 
-<head itemscope itemtype="http://schema.org/Store">
+<head itemscope itemtype="http://schema.org/Product">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
 	<!-- Page Title Here -->
-	<title>Shop - Chun</title>
-	<meta property="og:title" name="twitter:title" itemprop="title" content="Shop - Chun"/>
+	<title>Reviews - Chun</title>
+	<meta property="og:title" name="twitter:title" itemprop="title" content="Reviews - Chun"/>
 	
 	<!-- Favicons -->
 	<link href="../images/branding/hcicon_96px.png" rel="apple-touch-icon" sizes="96x96">
@@ -18,7 +18,7 @@
 
 	<!-- Meta -->
 	<meta itemprop="name" name="author" content="Chun"/>
-	
+
 	<!-- Disable screen scaling-->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
@@ -28,11 +28,11 @@
 	<meta name="twitter:card" content="Artist, Web Developer"/>
 
 	<!-- Facebook Meta -->
-	<meta property="og:url" itemprop="url" content="https://heliochun.github.io/shop"/>
+	<meta property="og:url" itemprop="url" content="https://heliochun.github.io/reviews"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:description" name="twitter:description" name="description" itemprop="description" content="Shop for software, themes, web development services, photoshop, photo editing, video editing | Store"/>
-	<meta property="og:image" name="twitter:image" itemprop="image" content="https://heliochun.github.io/images/og_images/store_ogimage_300.jpg"/>
-	<meta property="og:image:secure_url" content="https://heliochun.github.io/images/og_images/store_ogimage_300.jpg"/>
+	<meta property="og:description" name="twitter:description" name="description" itemprop="description" content="What people say | Reviews &amp; Testimonials for Chun"/>
+	<meta property="og:image" name="twitter:image" itemprop="image" content="https://heliochun.github.io/images/og_images/feedback_ogimage_300-2.jpg"/>
+	<meta property="og:image:secure_url" content="https://heliochun.github.io/images/og_images/feedback_ogimage_300.jpg-2"/>
 	<meta property="og:image:type" content="image/jpg"/>
 	<meta property="og:image:width" content="300"/>
 	<meta property="og:image:height" content="300"/>
@@ -43,7 +43,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
 	<!-- Main CSS files -->
-	<link rel="stylesheet" href="../css/styles.css?v=34"/>
+	<link rel="stylesheet" href="../css/styles.css?v=33"/>
 
 	<!-- JS files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -75,24 +75,21 @@
 			<div class="flex-item flex-middle">
 				<div class="nav tfm-wrapper">
 					<a href="https://heliochun.github.io/" class="nav-item">Overview</a>
-					<a href="https://heliochun.github.io/shop" class="nav-item selected-nav">Shop</a>
-					<a href="https://heliochun.github.io/reviews" class="nav-item">Reviews</a>
+					<a href="https://heliochun.github.io/shop" class="nav-item">Shop</a>
+					<a href="https://heliochun.github.io/feedback" class="nav-item selected-nav">Reviews</a>
 				</div>
 			</div>
 			<div class="flex-item not-flex-middle">
-				
-				<div class="notMobile">
-					<button id="getSocial" class="button button-outline">Follow</button>
-					<a href="mailto:gdev.business@gmail.com?Subject=Website%20development" title="gdev.business@gmail.com" class="button button-outline">Contact</a>
-				</div>
+				<button id="getSocial" class="button button-outline">Follow</button>
+				<a href="mailto:gdev.business@gmail.com?Subject=Website%20development" title="gdev.business@gmail.com" class="button button-outline">Contact</a>
 				
 				<!-- Mobile Navigation -->
 				<div class="mobileNavContainer">
-					<div class="mobileSelectedNav current-mobileNav">Shop</div>
+					<div class="mobileSelectedNav current-mobileNav">Reviews</div>
 					<div class="mobileNav">
 						<a href="https://heliochun.github.io/" class="mobileNav-item">Overview</a>
-						<a href="https://heliochun.github.io/shop" class="mobileNav-item selected-mobileNav">Shop</a>
-						<a href="https://heliochun.github.io/reviews" class="mobileNav-item">Reviews</a>
+						<a href="https://heliochun.github.io/shop" class="mobileNav-item">Shop</a>
+						<a href="https://heliochun.github.io/reviews" class="mobileNav-item selected-mobileNav">Reviews</a>
 					</div>
 				</div>
 				
@@ -106,30 +103,35 @@
 		<div class="shop-container">
 			<div class="shop-wrapper">
 				
-				<h1 class="section-title text-center">Software</h1>
+				<h1 class="section-title text-center">Reviews</h1>
 				
-				<div class="carousel-slider">
-					<div class="carousel">
+				<div class="feedback-container">
+					<div class="feedback-wrapper">
 						
-						<!-- Slides -->
-						<div class="carousel-slide cs2 csFrapuchino">
-							<a href="https://heliochun.github.io/shop/frapuchino">
-								<div class="carousel-slide-wrapper">
-									<div class="carousel-thumbnail"></div>
-									<div class="carousel-text">Frapuchino Theme</div>
-									<div class="carousel-price">45.00€</div>
-								</div>
-							</a>
-						</div>
 						
-						<div class="carousel-slide cs1 csMuffin">
-							<a href="https://heliochun.github.io/shop/muffin">
-								<div class="carousel-slide-wrapper">
-									<div class="carousel-thumbnail"></div>
-									<div class="carousel-text">Muffin Theme</div>
-									<div class="carousel-price">29.99€ <!-- <div class="was-price">29.99€</div> --></div>
-								</div>
-							</a>
+						<div class="striped-bar"></div>
+						
+						<div class="feedback-discuss">
+							<div id="disqus_thread"></div>
+							<script>
+
+							/**
+							*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+							*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+							
+							var disqus_config = function () {
+							this.page.url = 'https://heliochun.github.io/reviews';
+							// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+							};
+							
+							(function() { // DON'T EDIT BELOW THIS LINE
+							var d = document, s = d.createElement('script');
+							s.src = 'https://chungithub.disqus.com/embed.js';
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+							})();
+							</script>
+							<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">reviews powered by Disqus.</a></noscript>
 						</div>
 						
 					</div>
@@ -140,20 +142,6 @@
 	
 	</div> <!-- body-content -->
 
-	<!-- Bottom Sticky-bar -->
-	<div class="notDesktop">
-		<div class="topBar bottomBar">
-			<div class="topBar-wrapper flex-row">
-				<div class="flex-item not-flex-middle">
-					<a href="mailto:gdev.business@gmail.com?Subject=Website%20development" title="gdev.business@gmail.com" class="button button-outline">Contact</a>
-				</div>
-
-				<div class="flex-item not-flex-middle">
-					<button id="getSocial" class="button button-outline">Follow</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div id="showSocial" class="followContainer">
 		<div class="followWrapper">
