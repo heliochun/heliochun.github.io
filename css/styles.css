@@ -1110,6 +1110,11 @@ ul.tabs li.current{
 		width: 230px;
 		height: 230px;
 	}
+	.splitContent:nth-child(even) {
+		background-color: #f4f4f4;
+		margin: 4rem -4rem;
+		padding: 4rem 8rem;
+	}
 }
 
 @media (max-width: 1024px) {
