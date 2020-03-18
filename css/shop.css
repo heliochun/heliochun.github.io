@@ -59,18 +59,18 @@
 }
 
 
-#learn-muffin {
+.main-video {
     margin: 0 auto;
     position: relative;
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
     margin-bottom: 25px;
 }
 
-#learn-muffin img, #learn-muffin .md-icon {
+.main-video img, .main-video .md-icon {
     cursor: pointer;
 }
 
-#learn-muffin img {
+.main-video img {
     display: block;
 }
 
@@ -104,7 +104,7 @@
 }
 
 
-#learn-muffin .md-icon, .themeVideo .md-icon {
+.main-video .md-icon, .themeVideo .md-icon {
     position: absolute;
     top: 50%;
     left: 50%;

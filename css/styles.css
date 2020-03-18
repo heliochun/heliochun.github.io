@@ -452,6 +452,10 @@ a.topBarLogo {
     background-image: url(https://1.bp.blogspot.com/-TFwkFQOUbBg/XdgMjT-5UNI/AAAAAAAAA-0/-_PfpPHYZeUnoN5EjXEbx7mfACX8zE1KwCLcBGAsYHQ/s0/frapuchino-banner.jpg);
 }
 
+.viewThemeBanner.aven-banner {
+    background-image: url(https://1.bp.blogspot.com/-cFeqrTIuggA/XnGUYNvxn-I/AAAAAAAABC8/zuRvEfwZ9WYauIV1ydEzYbjOeM4_J6MzwCLcBGAsYHQ/s0/aven-banner.jpg);
+}
+
 body.black-friday .viewThemeBanner.muffin-banner {
     background-image: url(../shop/muffin/images/muffin-banner-bf.jpg);
 }
@@ -1082,6 +1086,10 @@ ul.tabs li.current{
 
 .csFrapuchino .carousel-thumbnail {
 	background-image: url(../images/shop/shop_frapuchino.png);
+}
+
+.csAven .carousel-thumbnail {
+	background-image: url(../images/shop/shop_aven.png);
 }
 
 
