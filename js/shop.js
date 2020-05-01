@@ -25,7 +25,7 @@ $(document).ready(function (){
 	
 	$('#scrollTo-screenshots').on('click', function() {
 		$('html, body').animate({
-			scrollTop: $("#screenshots").offset().top - 100
+			scrollTop: $("#screenshots").offset().top
 		}, 500);
 	});
 	
