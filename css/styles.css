@@ -717,6 +717,10 @@ h1.section-title {
     width: 100%;
 }
 
+.split-fullImage.vertical-imageDisplay {
+    text-align: center;
+}
+
 
 #screenshots {
     margin: 8rem 0;

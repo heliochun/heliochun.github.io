@@ -39,6 +39,8 @@
   display: flex;
   transition-property: transform;
   box-sizing: content-box;
+  
+  align-items: center;
 }
 .swiper-container-android .swiper-slide,
 .swiper-wrapper {
@@ -536,6 +538,7 @@ button.swiper-pagination-bullet {
 .slider-container {
     background: #191919;
     padding: 4rem 55px;
+	margin: 0 auto;
 }
 
 .slider-wrapper {
@@ -570,6 +573,29 @@ button.swiper-pagination-bullet {
 
 .swiper-slide-active {
     opacity: 1;
+}
+
+/* White slider */
+.slider-white {
+	background-color: #ffffff;
+}
+.slider-text {
+    max-width: 800px;
+	padding-top: 0;
+}
+
+.slider-white .swiper-button-next, .slider-white .swiper-button-prev {
+    color: #000;
+	color: #d9dee7;
+}
+.swiper-pagination-bullet-active {
+	background-color: #4285f4;
+}
+
+.external-review {
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
 }
 
 
