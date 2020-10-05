@@ -1216,8 +1216,13 @@ ul.tabs li.current{
 }
 
 @media (max-width: 768px) {
+	.carousel {
+		display: initial;
+	}
 	.carousel-slide {
 		width: 50%;
+		display: inline-block;
+		margin-bottom: 3rem;
 	}
 }
 
