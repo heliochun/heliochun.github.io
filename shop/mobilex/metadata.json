@@ -1,11 +1,11 @@
 {
-	"name": "Aven",
-	"description": "Material design theme",
-	"version": "1.42",
-	"date": "10-05-2020",
+	"name": "Mobile X",
+	"description": "Material design mobile theme",
+	"version": "1.3",
+	"date": "05-10-2020",
 	"author": "Chun",
 	"author_uri": "https://heliochun.github.io",
 	"author_blog_uri": "https://twitter.com/TweetChun",
-	"theme_uri": "https://heliochun.github.io/shop/aven",
-	"update_uri": "https://heliochun.github.io/shop/aven/metadata.json"
+	"theme_uri": "https://heliochun.github.io/shop/mobilex",
+	"update_uri": "https://heliochun.github.io/shop/aven/mobilex.json"
 }

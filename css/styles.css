@@ -456,6 +456,10 @@ a.topBarLogo {
     background-image: url(https://1.bp.blogspot.com/-cFeqrTIuggA/XnGUYNvxn-I/AAAAAAAABC8/zuRvEfwZ9WYauIV1ydEzYbjOeM4_J6MzwCLcBGAsYHQ/s0/aven-banner.jpg);
 }
 
+.viewThemeBanner.mobilex-banner {
+    background-image: url(https://1.bp.blogspot.com/-nBf1JbZHBSA/X3qnD5d0aaI/AAAAAAAABMc/lx7P6O-mPUcbOj8Q8PgZOFvsG8n_xeOTwCLcBGAsYHQ/s0/mobilex-banner.jpg);
+}
+
 body.black-friday .viewThemeBanner.muffin-banner {
     background-image: url(../shop/muffin/images/muffin-banner-bf.jpg);
 }
@@ -1094,6 +1098,9 @@ ul.tabs li.current{
 
 .csAven .carousel-thumbnail {
 	background-image: url(../images/shop/shop_aven.png);
+}
+.csMobilex .carousel-thumbnail {
+	background-image: url(../images/shop/shop_mobilex.png);
 }
 
 
