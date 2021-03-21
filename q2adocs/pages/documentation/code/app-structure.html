@@ -13,7 +13,7 @@
 	<!-- Page Title Here -->
 	<title>App Structure - Question2Answer</title>
 	<meta name="description" content=="Question2Answer application structure"/>
-	<link rel="canonical" href="http://docs.question2answer.org/pages/documentation/code/app-structure/"/>
+	<link rel="canonical" href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure/"/>
 	
 	<!-- Favicons -->
 	<link href="../../../images/branding/q2a_96px.png" rel="apple-touch-icon" sizes="96x96" type="image/png">
@@ -39,12 +39,13 @@
 	<div id="topBar" class="topBar">
 		<div class="topBar-wrapper flex-row">
 			<div class="flex-item not-flex-middle">
-				<a href="https://heliochun.github.io/q2adocs" class="topBarLogo">
+				<div id="navTrigger" class="material-icons mobile-only">menu</div>
+				<a href="https://docs.question2answer.org" class="topBarLogo">
 					<img src="../../../images/branding/question2answer-logo-350x40.png" class="logo-img normal-logo" />
 					<img src="../../../images/branding/question2answer-logo-white-350x40.png" class="logo-img white-logo" />
 				</a>
 			</div>
-			<div class="flex-item flex-middle">
+			<div id="mobileNav" class="flex-item flex-middle">
 				<nav class="main-nav">
 					<ul class="nav">
 						<li>
@@ -56,25 +57,33 @@
 								<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/code" class="sub-nav-item selected-nav">Code</a></li>
 							</ul>
 						</li>
-						<li><a href="#" class="nav-item">Contribute</a></li>
-						<li><a href="#" class="nav-item">Translate</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/contribute" class="nav-item">Contribute</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/translate" class="nav-item">Translate</a></li>
 						<li>
 							<span class="nav-item">Addons <span class="material-icons">arrow_drop_down</span> </span>
 							<ul class="sub-nav display-none">
-								<li><a href="#" class="sub-nav-item">Themes</a></li>
-								<li><a href="#" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/themes" class="sub-nav-item">Themes</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/plugins/" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/clients/" class="sub-nav-item">Clients</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/translations/" class="sub-nav-item">Translations</a></li>
 							</ul>
 						</li>
 					</ul>
+					<ul class="nav secondary-nav mobile-only">
+						<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
+						<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="flex-item not-flex-middle">
+			<div class="flex-item not-flex-middle not-mobile">
 				<ul class="nav secondary-nav">
-					<li><a href="https://docs.question2answer.org/services" class="nav-item">Services</a></li>
-					<li><a href="https://www.question2answer.org/sites.php" class="nav-item">Sites</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
 					<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
 				</ul>
 			</div>
+			<div id="darkPane"></div>
 		</div>
 	</div>
 	
@@ -83,7 +92,7 @@
 		<ul class="breadcrumbs">
 			<li class="breadcrumb-item">Documentation</li>
 			<li class="breadcrumb-item"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code">Code</a></li>
-			<li class="breadcrumb-item"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure">App Structure</a></li>
+			<li class="breadcrumb-item"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure/">App Structure</a></li>
 		</ul>
 	</div>
 
@@ -94,11 +103,14 @@
 			<div class="main-content">
 				<article class="page-article" itemscope>
 					
-					<ul class="page-sub-directories">
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code">External</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions">Functions</a></li>
-						<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure">App Structure</a></li>
-					</ul>
+					<div class="page-directory-navigation">
+						<div id="current-dir-nav"></div>
+						<ul class="page-sub-directories">
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code">External</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions">Functions</a></li>
+							<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure">App Structure</a></li>
+						</ul>
+					</div>
 					
 					<div class="article-content-container">
 						<h1 id="question2answer-application-structure">Question2Answer application structure</h1>
@@ -122,7 +134,7 @@
 						<p>For the latter four types above, we include <code class="language-plaintext highlighter-rouge">qa-include/qa-base.php</code> which initializes the PHP environment, various constants and settings, and then connects to the database. It also defines an autoloader (from v1.7+) which automatically loads core classes of a specific format:</p>
 
 						<ol>
-							<li>From Q2A 1.9 namespaces are used. The main core namespace is <code class="language-plaintext highlighter-rouge">Q2A</code> which maps to the <code class="language-plaintext highlighter-rouge">qa-src/</code> directory. So a class of the form <code class="language-plaintext highlighter-rouge">\Q2A\Storage\FileCacheDriver</code> will automatically load the file <code class="language-plaintext highlighter-rouge">qa-src/Storage/FileCacheDriver.php</code>. See the <a href="/contribute/coding-style/#new-autoloaded-classes">coding style</a> page for full details.</li>
+							<li>From Q2A 1.9 namespaces are used. The main core namespace is <code class="language-plaintext highlighter-rouge">Q2A</code> which maps to the <code class="language-plaintext highlighter-rouge">qa-src/</code> directory. So a class of the form <code class="language-plaintext highlighter-rouge">\Q2A\Storage\FileCacheDriver</code> will automatically load the file <code class="language-plaintext highlighter-rouge">qa-src/Storage/FileCacheDriver.php</code>. See the <a href="https://heliochun.github.io/q2adocs/pages/contribute/coding-style/#new-autoloaded-classes">coding style</a> page for full details.</li>
 							<li>In Q2A 1.7-1.8, classes of the form <code class="language-plaintext highlighter-rouge">Q2A_Util_Usage</code> map to files in the <code class="language-plaintext highlighter-rouge">qa-include/Q2A/</code> directory, e.g. <code class="language-plaintext highlighter-rouge">qa-include/Q2A/Util/Usage.php</code>. These are being phased out in favor of namespaces.</li>
 						</ol>
 
@@ -336,7 +348,7 @@
 				<li><a href="https://www.question2answer.org/feedback.php">Send feedback</a></li>
 				<li><a href="https://www.question2answer.org/versions.php">Version history</a></li>
 				<li><a href="https://www.question2answer.org/license.php">License details</a></li>
-				<li><a href="http://demo.question2answer.org/">Demo sandbox</a></li>
+				<li><a href="https://demo.question2answer.org/">Demo sandbox</a></li>
 			</ul>
 			<div class="footer-credits-nav">
 				Created by <a href="http://www.gidgreen.com">Gideon Greenspan</a> and <a href="https://github.com/q2a/question2answer/graphs/contributors">Contributors</a>.
@@ -350,18 +362,15 @@
 	<script src="../../../js/highlight.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
   
-	<!-- Scripts rom Q2A Docs - Classic version -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1165533-8&amp;l=dataLayer&amp;cx=c">
-	</script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js">
-	</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1974891-11"></script>
+	<!-- Google Analytics Chun Github -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		gtag('config', 'UA-1974891-11');
-		gtag('config', 'UA-1165533-8'); // old tracking ID
+		ga('create', 'UA-65621075-5', 'auto');
+		ga('send', 'pageview');
 	</script>
 
 </body>

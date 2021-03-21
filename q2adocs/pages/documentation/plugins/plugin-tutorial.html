@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
 	<!-- Page Title Here -->
-	<title>Plugin tutorial documentation - Question2Answer</title>
+	<title>Plugin tutorial (Documentation) - Question2Answer</title>
 	<meta name="description" content=="Tutorial: Writing a Question2Answer plugin"/>
 	<link rel="canonical" href="http://docs.question2answer.org/pages/documentation/plugins/plugin-tutorial"/>
 	
@@ -39,12 +39,13 @@
 	<div id="topBar" class="topBar">
 		<div class="topBar-wrapper flex-row">
 			<div class="flex-item not-flex-middle">
+				<div id="navTrigger" class="material-icons mobile-only">menu</div>
 				<a href="https://heliochun.github.io/q2adocs" class="topBarLogo">
 					<img src="../../../images/branding/question2answer-logo-350x40.png" class="logo-img normal-logo" />
 					<img src="../../../images/branding/question2answer-logo-white-350x40.png" class="logo-img white-logo" />
 				</a>
 			</div>
-			<div class="flex-item flex-middle">
+			<div id="mobileNav" class="flex-item flex-middle">
 				<nav class="main-nav">
 					<ul class="nav">
 						<li>
@@ -56,25 +57,33 @@
 								<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/code" class="sub-nav-item">Code</a></li>
 							</ul>
 						</li>
-						<li><a href="#" class="nav-item">Contribute</a></li>
-						<li><a href="#" class="nav-item">Translate</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/contribute" class="nav-item">Contribute</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/translate" class="nav-item">Translate</a></li>
 						<li>
 							<span class="nav-item">Addons <span class="material-icons">arrow_drop_down</span> </span>
 							<ul class="sub-nav display-none">
-								<li><a href="#" class="sub-nav-item">Themes</a></li>
-								<li><a href="#" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/themes" class="sub-nav-item">Themes</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/plugins/" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/clients/" class="sub-nav-item">Clients</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/translations/" class="sub-nav-item">Translations</a></li>
 							</ul>
 						</li>
 					</ul>
+					<ul class="nav secondary-nav mobile-only">
+						<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
+						<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="flex-item not-flex-middle">
+			<div class="flex-item not-flex-middle not-mobile">
 				<ul class="nav secondary-nav">
-					<li><a href="https://docs.question2answer.org/services" class="nav-item">Services</a></li>
-					<li><a href="https://www.question2answer.org/sites.php" class="nav-item">Sites</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
 					<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
 				</ul>
 			</div>
+			<div id="darkPane"></div>
 		</div>
 	</div>
 	
@@ -94,20 +103,23 @@
 			<div class="main-content">
 				<article class="page-article" itemscope>
 					
-					<ul class="page-sub-directories">
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">Plugins</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules">Modules</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/layers">Layers</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides">Overrides</a></li>
-						<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/plugin-tutorial">Plugin Tutorial</a></li>
-					</ul>
+					<div class="page-directory-navigation">
+						<div id="current-dir-nav"></div>
+						<ul class="page-sub-directories">
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">Plugins</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules">Modules</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/layers">Layers</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides">Overrides</a></li>
+							<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/plugin-tutorial">Plugin Tutorial</a></li>
+						</ul>
+					</div>
 					
 					<div class="article-content-container">
 						<h1 id="tutorial-writing-a-question2answer-plugin">Tutorial: Writing a Question2Answer plugin</h1>
 
-						<p>In this tutorial, we will create a Question2Answer (1.5+) <a href="/plugins/">plugin</a> from scratch. Our plugin will allow descriptions to be added to tags on a Q2A site. These descriptions will be displayed and edited on the page listing recent questions for each tag. They will also be shown in a tooltip when users mouse over a tag. The Q2A administrator will be able to decide who can edit tag descriptions.</p>
+						<p>In this tutorial, we will create a Question2Answer (1.5+) <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">plugin</a> from scratch. Our plugin will allow descriptions to be added to tags on a Q2A site. These descriptions will be displayed and edited on the page listing recent questions for each tag. They will also be shown in a tooltip when users mouse over a tag. The Q2A administrator will be able to decide who can edit tag descriptions.</p>
 
-						<p>The tutorial will touch on each of the main areas of Q2A plugin <code class="language-plaintext highlighter-rouge">function</code>ality. Tag descriptions will be stored in the Q2A database, using Q2A’s tag metadata table. The descriptions will be displayed on a tag’s page using a <a href="/plugins/modules-widget/">widget module</a>. Tags will be edited on pages provided by a <a href="/plugins/modules-page/">page module</a>. An <a href="/plugins/overrides/">override</a> will be used to show the tooltips, and then a <a href="/plugins/layers/">layer</a> will allow us to do this with fewer database queries. An admin form for the plugin will be displayed in the ‘Plugins’ section of the admin panel, with the corresponding settings stored by Q2A’s options mechanism. At the end of this process, we will see how to make the plugin localizable.</p>
+						<p>The tutorial will touch on each of the main areas of Q2A plugin <code class="language-plaintext highlighter-rouge">function</code>ality. Tag descriptions will be stored in the Q2A database, using Q2A’s tag metadata table. The descriptions will be displayed on a tag’s page using a <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-widget/">widget module</a>. Tags will be edited on pages provided by a <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-page/">page module</a>. An <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides/">override</a> will be used to show the tooltips, and then a <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/layers/">layer</a> will allow us to do this with fewer database queries. An admin form for the plugin will be displayed in the ‘Plugins’ section of the admin panel, with the corresponding settings stored by Q2A’s options mechanism. At the end of this process, we will see how to make the plugin localizable.</p>
 
 						<p>This tutorial assumes you are familiar with the <a href="http://www.php.net/">PHP</a> programming language as well as some basic <a href="http://en.wikipedia.org/wiki/HTML">HTML</a> and <a href="http://www.mysql.com/">MySQL</a>.</p>
 
@@ -117,7 +129,7 @@
 
 						<ul>
 							<li>
-								<p>Create a new empty directory <code class="language-plaintext highlighter-rouge">tag-descriptions</code> in Q2A’s <code class="language-plaintext highlighter-rouge">qa-plugin</code> directory - see <a href="/plugins/">here</a> for naming conventions.</p>
+								<p>Create a new empty directory <code class="language-plaintext highlighter-rouge">tag-descriptions</code> in Q2A’s <code class="language-plaintext highlighter-rouge">qa-plugin</code> directory - see <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">here</a> for naming conventions.</p>
 							</li>
 							<li>
 								<p>Create an empty <code class="language-plaintext highlighter-rouge">qa-plugin.php</code> file inside this directory. This file is the core of the plugin. It registers each of the plugin’s elements with Q2A and contains meta information for display in Q2A’s admin interface.</p>
@@ -148,7 +160,7 @@ Plugin Update Check URI:
 <span class="p">}</span>
 </code></pre></div>    </div>
 
-								<p>See <a href="/plugins/">here</a> for a detailed description of the metadata fields. The code below the metadata ensures that visitors to your Q2A site cannot request the <code class="language-plaintext highlighter-rouge">qa-plugin.php</code> page directly (even though doing so would cause no actual harm).</p>
+								<p>See <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">here</a> for a detailed description of the metadata fields. The code below the metadata ensures that visitors to your Q2A site cannot request the <code class="language-plaintext highlighter-rouge">qa-plugin.php</code> page directly (even though doing so would cause no actual harm).</p>
 							</li>
 							<li>
 								<p>Reopen the ‘Plugins’ page of your Q2A site admin panel and check that the listing has been updated. We’re on our way!</p>
@@ -175,7 +187,7 @@ Plugin Update Check URI:
 <span class="p">}</span>
 </code></pre></div>    </div>
 
-								<p>This is the beginning of the PHP class that will define the widget’s functionality. The <code class="language-plaintext highlighter-rouge">allow_template()</code> function is one of three class functions required in a widget module (<a href="/plugins/modules-widget/">more here</a>). It is called by Q2A to determine which types of pages the widget can be displayed on. In this case, the widget can only be displayed on pages listing recent questions for a tag, so the function only returns <code class="language-plaintext highlighter-rouge">true</code> if the <code class="language-plaintext highlighter-rouge">$template</code> parameter is <code class="language-plaintext highlighter-rouge">'tag'</code>.</p>
+								<p>This is the beginning of the PHP class that will define the widget’s functionality. The <code class="language-plaintext highlighter-rouge">allow_template()</code> function is one of three class functions required in a widget module (<a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-widget/">more here</a>). It is called by Q2A to determine which types of pages the widget can be displayed on. In this case, the widget can only be displayed on pages listing recent questions for a tag, so the function only returns <code class="language-plaintext highlighter-rouge">true</code> if the <code class="language-plaintext highlighter-rouge">$template</code> parameter is <code class="language-plaintext highlighter-rouge">'tag'</code>.</p>
 							</li>
 							<li>
 								<p>Add the following two additional functions <strong>inside</strong> the <code class="language-plaintext highlighter-rouge">class</code> definition in <code class="language-plaintext highlighter-rouge">qa-tag-desc-widget.php</code>:</p>
@@ -204,7 +216,7 @@ Plugin Update Check URI:
 <span class="p">);</span>
 </code></pre></div>    </div>
 
-								<p>Each parameter to <code class="language-plaintext highlighter-rouge">qa_register_plugin_module()</code> is explained by a comment in the code above - <a href="/plugins/">more here</a>.</p>
+								<p>Each parameter to <code class="language-plaintext highlighter-rouge">qa_register_plugin_module()</code> is explained by a comment in the code above - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">more here</a>.</p>
 							</li>
 							<li>
 								<p>Now it’s time to test out the widget. Ensure you have saved/uploaded the <code class="language-plaintext highlighter-rouge">qa-plugin.php</code> and <code class="language-plaintext highlighter-rouge">qa-tag-desc-widget.php</code> files. Then open the ‘Layout’ section of your Q2A site admin panel. The list of available widgets should include the name ‘Tag Descriptions’. Click ‘add widget’ next to it, and choose to display the widget somewhere on tag pages. Note how the options shown in the admin panel reflect the widget module’s responses from <code class="language-plaintext highlighter-rouge">allow_template()</code> and <code class="language-plaintext highlighter-rouge">allow_region()</code>.</p>
@@ -241,7 +253,7 @@ Plugin Update Check URI:
 <span class="p">}</span>
 </code></pre></div>    </div>
 
-								<p>The <code class="language-plaintext highlighter-rouge">match_request()</code> function let a page module decide if it will process a particular web page request. The <code class="language-plaintext highlighter-rouge">$request</code> parameter is always slash-separated, independent of the URL structure used by a particular Q2A site - <a href="/plugins/modules-page/">more here</a>. We have decided that the URLs for our tag description editor will take the form <code class="language-plaintext highlighter-rouge">tag-edit/*</code> where <code class="language-plaintext highlighter-rouge">*</code> is the tag to be edited. For now, the <code class="language-plaintext highlighter-rouge">process_request()</code> function in the page module generates an empty page for these requests.</p>
+								<p>The <code class="language-plaintext highlighter-rouge">match_request()</code> function let a page module decide if it will process a particular web page request. The <code class="language-plaintext highlighter-rouge">$request</code> parameter is always slash-separated, independent of the URL structure used by a particular Q2A site - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-page/">more here</a>. We have decided that the URLs for our tag description editor will take the form <code class="language-plaintext highlighter-rouge">tag-edit/*</code> where <code class="language-plaintext highlighter-rouge">*</code> is the tag to be edited. For now, the <code class="language-plaintext highlighter-rouge">process_request()</code> function in the page module generates an empty page for these requests.</p>
 							</li>
 							<li>
 								<p>Activate the page model within the plugin by pasting the following code at the end of your <code class="language-plaintext highlighter-rouge">qa-plugin.php</code> file:</p>
@@ -318,7 +330,7 @@ Plugin Update Check URI:
 
 								<ul>
 									<li>
-										<p>First, we include the Q2A core file <code class="language-plaintext highlighter-rouge">qa-db-metas.php</code>, since we will need use some of its functions to access the Q2A database table for tag meta information. (If necessary, modules can also create their own database tables by implementing the <code class="language-plaintext highlighter-rouge">init_queries()</code> function - <a href="/plugins/modules/">more here</a>).</p>
+										<p>First, we include the Q2A core file <code class="language-plaintext highlighter-rouge">qa-db-metas.php</code>, since we will need use some of its functions to access the Q2A database table for tag meta information. (If necessary, modules can also create their own database tables by implementing the <code class="language-plaintext highlighter-rouge">init_queries()</code> function - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/">more here</a>).</p>
 									</li>
 									<li>
 										<p>The main work consists of adding an element with key <code class="language-plaintext highlighter-rouge">'form'</code> to the <code class="language-plaintext highlighter-rouge">$qa_content</code> array. This element describes a form on the page, which is converted by the Q2A theme class into appropriate HTML code. (To add more forms to the page, more elements could be added with keys <code class="language-plaintext highlighter-rouge">'form2'</code>, <code class="language-plaintext highlighter-rouge">'form_extra'</code>, or anything else beginning with <code class="language-plaintext highlighter-rouge">'form'</code>.)</p>
@@ -402,7 +414,7 @@ Plugin Update Check URI:
 <span class="p">}</span>
 </code></pre></div>    </div>
 
-								<p>The <code class="language-plaintext highlighter-rouge">output_widget()</code> function now identifies which tag page is being requested, retrieves the appropriate tag description from the database, and displays it if it exists, after HTML escaping. An appropriate link to edit the description is also shown, using Q2A’s <code class="language-plaintext highlighter-rouge">qa_path_html(...)</code> function to create an HTML-escaped relative URL to the tag editor page - <a href="/code/functions/">more here</a>.</p>
+								<p>The <code class="language-plaintext highlighter-rouge">output_widget()</code> function now identifies which tag page is being requested, retrieves the appropriate tag description from the database, and displays it if it exists, after HTML escaping. An appropriate link to edit the description is also shown, using Q2A’s <code class="language-plaintext highlighter-rouge">qa_path_html(...)</code> function to create an HTML-escaped relative URL to the tag editor page - <a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions">more here</a>.</p>
 							</li>
 							<li>
 								<p>Save/upload as usual. If everything is in place, you should be able to view your descriptions on the tag page, click to edit them on a different page, and then click to save and view them back again on the tag page. Congratulations!</p>
@@ -428,7 +440,7 @@ Plugin Update Check URI:
 <span class="p">}</span>
 </code></pre></div>    </div>
 
-								<p>This <code class="language-plaintext highlighter-rouge">qa_tag_html()</code> function will override the standard version of that function, which we saw just before. However our version makes uses of the standard function by calling it using the name <code class="language-plaintext highlighter-rouge">qa_tag_html_base()</code> - <a href="/plugins/overrides/">more here</a>. Instead of passing through the <code class="language-plaintext highlighter-rouge">$tag</code> as is, we add underscores before and after it, so that we can test that the override is working. Note that the optional <code class="language-plaintext highlighter-rouge">$favorited</code> parameter was added in Q2A 1.6, but this code will still work fine in Q2A 1.5.x, with PHP ignoring the extra unexpected parameter.</p>
+								<p>This <code class="language-plaintext highlighter-rouge">qa_tag_html()</code> function will override the standard version of that function, which we saw just before. However our version makes uses of the standard function by calling it using the name <code class="language-plaintext highlighter-rouge">qa_tag_html_base()</code> - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides/">more here</a>. Instead of passing through the <code class="language-plaintext highlighter-rouge">$tag</code> as is, we add underscores before and after it, so that we can test that the override is working. Note that the optional <code class="language-plaintext highlighter-rouge">$favorited</code> parameter was added in Q2A 1.6, but this code will still work fine in Q2A 1.5.x, with PHP ignoring the extra unexpected parameter.</p>
 							</li>
 							<li>
 								<p>Activate the function override by pasting the following line at the end of your plugin’s <code class="language-plaintext highlighter-rouge">qa-plugin.php</code>:</p>
@@ -467,7 +479,7 @@ Plugin Update Check URI:
 
 								<ul>
 									<li>
-										<p>First, we call the standard version of the function using <code class="language-plaintext highlighter-rouge">qa_tag_html_base()</code> and store the standard HTML to represent a tag in the variable <code class="language-plaintext highlighter-rouge">$taghtml</code>. By calling through to the base function rather than copying its code here, we protect ourselves better against changes in future versions of Q2A. We also enable multiple plugins to override the same function for different purposes, with Q2A building an appropriate chain of renamed functions that call each other in turn. If possible, it is always a good idea to do this when overriding a function - <a href="/plugins/overrides/">more here</a>.</p>
+										<p>First, we call the standard version of the function using <code class="language-plaintext highlighter-rouge">qa_tag_html_base()</code> and store the standard HTML to represent a tag in the variable <code class="language-plaintext highlighter-rouge">$taghtml</code>. By calling through to the base function rather than copying its code here, we protect ourselves better against changes in future versions of Q2A. We also enable multiple plugins to override the same function for different purposes, with Q2A building an appropriate chain of renamed functions that call each other in turn. If possible, it is always a good idea to do this when overriding a function - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides/">more here</a>.</p>
 									</li>
 									<li>
 										<p>We retrieve the description for <code class="language-plaintext highlighter-rouge">$tag</code> from the database, using <code class="language-plaintext highlighter-rouge">qa_db_tagmeta_get()</code> in the same way as before.</p>
@@ -575,7 +587,7 @@ Plugin Update Check URI:
 										<p>Then <code class="language-plaintext highlighter-rouge">$plugin_tag_desc_list</code> is set to <code class="language-plaintext highlighter-rouge">null</code> so that this branch is skipped next time <code class="language-plaintext highlighter-rouge">post_tag_item(...)</code> is called.</p>
 									</li>
 									<li>
-										<p>Finally, we call through to the <code class="language-plaintext highlighter-rouge">post_tag_item()</code> function in Q2A’s base theme class using PHP’s double colon notation - <a href="/plugins/layers/">more here</a>. Note how base functions are called differently for overrides and for layers.</p>
+										<p>Finally, we call through to the <code class="language-plaintext highlighter-rouge">post_tag_item()</code> function in Q2A’s base theme class using PHP’s double colon notation - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/layers/">more here</a>. Note how base functions are called differently for overrides and for layers.</p>
 									</li>
 								</ul>
 							</li>
@@ -625,7 +637,7 @@ Plugin Update Check URI:
 										<p>As before, we check if the global <code class="language-plaintext highlighter-rouge">$plugin_tag_desc_list</code> array variable contains any items, If so, we need to retrieve some tag descriptions from the database.</p>
 									</li>
 									<li>
-										<p>We retrieve all the tag descriptions in one database query. There is no function to retrieve metadata for multiple tags in <code class="language-plaintext highlighter-rouge">qa-db-metas.php</code>, so we write and run the query ourselves using Q2A’s <code class="language-plaintext highlighter-rouge">qa_db_query_sub()</code> function. This substitutes <code class="language-plaintext highlighter-rouge">^</code> in the query string for the Q2A table prefix set in <code class="language-plaintext highlighter-rouge">qa-config.php</code>. It also substitutes <code class="language-plaintext highlighter-rouge">$</code> and <code class="language-plaintext highlighter-rouge">#</code> for any additional parameters passed, escaping them to ensure the SQL is secure - <a href="/code/functions/#database-access-in-qa-dbphp">more here</a>. In this case, the <code class="language-plaintext highlighter-rouge">$</code> symbol will be turning into a comma-separated list of tags in <code class="language-plaintext highlighter-rouge">array_keys($plugin_tag_desc_list)</code>.</p>
+										<p>We retrieve all the tag descriptions in one database query. There is no function to retrieve metadata for multiple tags in <code class="language-plaintext highlighter-rouge">qa-db-metas.php</code>, so we write and run the query ourselves using Q2A’s <code class="language-plaintext highlighter-rouge">qa_db_query_sub()</code> function. This substitutes <code class="language-plaintext highlighter-rouge">^</code> in the query string for the Q2A table prefix set in <code class="language-plaintext highlighter-rouge">qa-config.php</code>. It also substitutes <code class="language-plaintext highlighter-rouge">$</code> and <code class="language-plaintext highlighter-rouge">#</code> for any additional parameters passed, escaping them to ensure the SQL is secure - <a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions/#database-access-in-qa-dbphp">more here</a>. In this case, the <code class="language-plaintext highlighter-rouge">$</code> symbol will be turning into a comma-separated list of tags in <code class="language-plaintext highlighter-rouge">array_keys($plugin_tag_desc_list)</code>.</p>
 									</li>
 									<li>
 										<p>The <code class="language-plaintext highlighter-rouge">$result</code> obtained from the database query is turned into a map from tags to descriptions using Q2A’s <code class="language-plaintext highlighter-rouge">qa_db_read_all_assoc()</code> function - see the function’s definition in <code class="language-plaintext highlighter-rouge">qa-db.php</code>. The map is stored in the global <code class="language-plaintext highlighter-rouge">$plugin_tag_desc_map</code> variable so that it is available every time our <code class="language-plaintext highlighter-rouge">post_tag_item()</code> function is called.</p>
@@ -718,7 +730,7 @@ Plugin Update Check URI:
 								<p>The <code class="language-plaintext highlighter-rouge">admin_form()</code> function can also be added to any module, and enables that module to display a form on the ‘Plugins’ page of the Q2A admin panel. The function returns a Q2A form definition array for display on the page, after processing any appropriate user input. Most of this should be familiar from our earlier encounter with a Q2A form, but a few things are new:</p>
 
 								<ul>
-									<li>We’re using Q2A’s <code class="language-plaintext highlighter-rouge">qa_opt()</code> function to both set and retrieve option values - <a href="/code/functions/">more here</a>.</li>
+									<li>We’re using Q2A’s <code class="language-plaintext highlighter-rouge">qa_opt()</code> function to both set and retrieve option values - <a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions/">more here</a>.</li>
 									<li>An element <code class="language-plaintext highlighter-rouge">'ok'</code> is used to add a confirmation message at the top of the form.</li>
 									<li>An element <code class="language-plaintext highlighter-rouge">'suffix'</code> is used within field definitions to show some text after the field.</li>
 								</ul>
@@ -874,7 +886,7 @@ Plugin Update Check URI:
 <span class="p">);</span>
 </code></pre></div>    </div>
 
-								<p>This sets up localization for your plugin. The <code class="language-plaintext highlighter-rouge">*</code> in the file name passed to <code class="language-plaintext highlighter-rouge">qa_register_plugin_phrases()</code> will be substituted for language codes such as <code class="language-plaintext highlighter-rouge">fr</code> or <code class="language-plaintext highlighter-rouge">ru</code>, or <code class="language-plaintext highlighter-rouge">default</code> to load the default phrases. The second parameter <code class="language-plaintext highlighter-rouge">'plugin_tag_desc'</code> sets the prefix for retrieving your language strings using Q2A’s <code class="language-plaintext highlighter-rouge">qa_lang()</code> or <code class="language-plaintext highlighter-rouge">qa_lang_html()</code> functions - <a href="/plugins/">more here</a>.</p>
+								<p>This sets up localization for your plugin. The <code class="language-plaintext highlighter-rouge">*</code> in the file name passed to <code class="language-plaintext highlighter-rouge">qa_register_plugin_phrases()</code> will be substituted for language codes such as <code class="language-plaintext highlighter-rouge">fr</code> or <code class="language-plaintext highlighter-rouge">ru</code>, or <code class="language-plaintext highlighter-rouge">default</code> to load the default phrases. The second parameter <code class="language-plaintext highlighter-rouge">'plugin_tag_desc'</code> sets the prefix for retrieving your language strings using Q2A’s <code class="language-plaintext highlighter-rouge">qa_lang()</code> or <code class="language-plaintext highlighter-rouge">qa_lang_html()</code> functions - <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">more here</a>.</p>
 							</li>
 							<li>
 								<p>Find the line in <code class="language-plaintext highlighter-rouge">qa-tag-desc-widget.php</code> containing the phrase <code class="language-plaintext highlighter-rouge">Create tag description</code> and replace it with:</p>
@@ -987,18 +999,15 @@ Plugin Update Check URI:
 	<script src="../../../js/highlight.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
   
-	<!-- Scripts rom Q2A Docs - Classic version -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1165533-8&amp;l=dataLayer&amp;cx=c">
-	</script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js">
-	</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1974891-11"></script>
+	<!-- Google Analytics Chun Github -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		gtag('config', 'UA-1974891-11');
-		gtag('config', 'UA-1165533-8'); // old tracking ID
+		ga('create', 'UA-65621075-5', 'auto');
+		ga('send', 'pageview');
 	</script>
 
 </body>

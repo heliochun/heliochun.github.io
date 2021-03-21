@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
 	<!-- Page Title Here -->
-	<title>Plugin modules documentation - Question2Answer</title>
+	<title>Plugin modules (Documentation) - Question2Answer</title>
 	<meta name="description" content=="Implementing plugin modules"/>
 	<link rel="canonical" href="http://docs.question2answer.org/pages/documentation/plugins/modules"/>
 	
@@ -39,12 +39,13 @@
 	<div id="topBar" class="topBar">
 		<div class="topBar-wrapper flex-row">
 			<div class="flex-item not-flex-middle">
+				<div id="navTrigger" class="material-icons mobile-only">menu</div>
 				<a href="https://heliochun.github.io/q2adocs" class="topBarLogo">
 					<img src="../../../images/branding/question2answer-logo-350x40.png" class="logo-img normal-logo" />
 					<img src="../../../images/branding/question2answer-logo-white-350x40.png" class="logo-img white-logo" />
 				</a>
 			</div>
-			<div class="flex-item flex-middle">
+			<div id="mobileNav" class="flex-item flex-middle">
 				<nav class="main-nav">
 					<ul class="nav">
 						<li>
@@ -56,25 +57,33 @@
 								<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/code" class="sub-nav-item">Code</a></li>
 							</ul>
 						</li>
-						<li><a href="#" class="nav-item">Contribute</a></li>
-						<li><a href="#" class="nav-item">Translate</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/contribute" class="nav-item">Contribute</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/translate" class="nav-item">Translate</a></li>
 						<li>
 							<span class="nav-item">Addons <span class="material-icons">arrow_drop_down</span> </span>
 							<ul class="sub-nav display-none">
-								<li><a href="#" class="sub-nav-item">Themes</a></li>
-								<li><a href="#" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/themes" class="sub-nav-item">Themes</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/plugins/" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/clients/" class="sub-nav-item">Clients</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/translations/" class="sub-nav-item">Translations</a></li>
 							</ul>
 						</li>
 					</ul>
+					<ul class="nav secondary-nav mobile-only">
+						<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
+						<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="flex-item not-flex-middle">
+			<div class="flex-item not-flex-middle not-mobile">
 				<ul class="nav secondary-nav">
-					<li><a href="https://docs.question2answer.org/services" class="nav-item">Services</a></li>
-					<li><a href="https://www.question2answer.org/sites.php" class="nav-item">Sites</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
 					<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
 				</ul>
 			</div>
+			<div id="darkPane"></div>
 		</div>
 	</div>
 	
@@ -94,34 +103,37 @@
 			<div class="main-content">
 				<article class="page-article" itemscope>
 					
-					<ul class="page-sub-directories">
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">Plugins</a></li>
-						<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules">Modules</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/layers">Layers</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides">Overrides</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/plugin-tutorial">Plugin Tutorial</a></li>
-					</ul>
+					<div class="page-directory-navigation">
+						<div id="current-dir-nav"></div>
+						<ul class="page-sub-directories">
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins">Plugins</a></li>
+							<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules">Modules</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/layers">Layers</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/overrides">Overrides</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/plugin-tutorial">Plugin Tutorial</a></li>
+						</ul>
+					</div>
 					
 					<div class="article-content-container">
 						<h1 id="implementing-plugin-modules">Implementing plugin modules</h1>
 
-						<p>Plugin modules enable Question2Answer to be extended in specific ways. Each module is implemented as a PHP <code class="language-plaintext highlighter-rouge">class</code> with specific member functions. Some functions are relevant for all module types, as described below. Other functions are specific to a certain type of module, e.g. <a href="/plugins/modules-page/">page modules</a> implement the functions <code class="language-plaintext highlighter-rouge">match_request()</code> and <code class="language-plaintext highlighter-rouge">process_request()</code>. If you wish to use non English characters in the PHP code for a module, ensure your text editor is using UTF-8 encoding without a BOM (byte order mark).</p>
+						<p>Plugin modules enable Question2Answer to be extended in specific ways. Each module is implemented as a PHP <code class="language-plaintext highlighter-rouge">class</code> with specific member functions. Some functions are relevant for all module types, as described below. Other functions are specific to a certain type of module, e.g. <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules-page/">page modules</a> implement the functions <code class="language-plaintext highlighter-rouge">match_request()</code> and <code class="language-plaintext highlighter-rouge">process_request()</code>. If you wish to use non English characters in the PHP code for a module, ensure your text editor is using UTF-8 encoding without a BOM (byte order mark).</p>
 
 						<h2 id="types-of-module">Types of Module</h2>
 
 						<p>Below is a list of the module types supported by Q2A - click for more information about each type:</p>
 
 						<ul>
-							<li><a href="/plugins/modules-page/"><strong>page</strong></a> modules add a new type of page to a Q2A installation. The XML Sitemap plugin included with Q2A is an example.</li>
-							<li><a href="/plugins/modules-login/"><strong>login</strong></a> modules allow users to log in to Q2A via an external identity provider, like the Facebook Login plugin included with Q2A.</li>
-							<li><a href="/plugins/modules-editor/"><strong>editor</strong></a> modules provide a web interface for writing and editing posts. The WYSIWYG Editor included with Q2A is implemented via a plugin that registers an editor module.</li>
-							<li><a href="/plugins/modules-viewer/"><strong>viewer</strong></a> modules render content as HTML or text, and often work together with an editor module. Support for <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or equations could be added via a plugin with both an editor and viewer module.</li>
-							<li><a href="/plugins/modules-event/"><strong>event</strong></a> modules (from Q2A 1.4+) are notified when something important happens, such as content being posted or voted on. They can be used for analytics, notifications or integrating with external services such as <a href="http://www.twitter.com/">Twitter</a>. The Event Logger plugin included with Q2A logs all events to a database table and/or log files.</li>
-							<li><a href="/plugins/modules-widget/"><strong>widget</strong></a> modules (from Q2A 1.4+) allow extra content to be shown on Q2A pages. The site admin can decide exactly where the widget is displayed. The Tag Cloud widget plugin that comes with Q2A is one example.</li>
-							<li><a href="/plugins/modules-filter/"><strong>filter</strong></a> modules (from Q2A 1.5+) can validate and/or modify many types of user input, including the content of posts. They can also mark whether a particular post should be queued for moderation.</li>
-							<li><a href="/plugins/modules-search/"><strong>search</strong></a> modules (from Q2A 1.5+) can implement a custom indexer and/or search engine for a Q2A site. They are given the opportunity to index posts and/or custom page content, and replace the default search results with their own.</li>
-							<li><a href="/plugins/modules-captcha/"><strong>captcha</strong></a> modules (from Q2A 1.5+) provide a web interface for human verification. The reCAPTCHA plugin that comes with Q2A provides an example, using the popular <a href="http://www.google.com/recaptcha">reCAPTCHA</a> service.</li>
-							<li><a href="/plugins/modules-process/"><strong>process</strong></a> modules (from Q2A 1.5+) have the opportunity to run at specific stages of Q2A’s response processing. They can be used for logging, analytics, additional authentication, caching, etc…</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-page/"><strong>page</strong></a> modules add a new type of page to a Q2A installation. The XML Sitemap plugin included with Q2A is an example.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-login/"><strong>login</strong></a> modules allow users to log in to Q2A via an external identity provider, like the Facebook Login plugin included with Q2A.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-editor/"><strong>editor</strong></a> modules provide a web interface for writing and editing posts. The WYSIWYG Editor included with Q2A is implemented via a plugin that registers an editor module.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-viewer/"><strong>viewer</strong></a> modules render content as HTML or text, and often work together with an editor module. Support for <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or equations could be added via a plugin with both an editor and viewer module.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-event/"><strong>event</strong></a> modules (from Q2A 1.4+) are notified when something important happens, such as content being posted or voted on. They can be used for analytics, notifications or integrating with external services such as <a href="http://www.twitter.com/">Twitter</a>. The Event Logger plugin included with Q2A logs all events to a database table and/or log files.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-widget/"><strong>widget</strong></a> modules (from Q2A 1.4+) allow extra content to be shown on Q2A pages. The site admin can decide exactly where the widget is displayed. The Tag Cloud widget plugin that comes with Q2A is one example.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-filter/"><strong>filter</strong></a> modules (from Q2A 1.5+) can validate and/or modify many types of user input, including the content of posts. They can also mark whether a particular post should be queued for moderation.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-search/"><strong>search</strong></a> modules (from Q2A 1.5+) can implement a custom indexer and/or search engine for a Q2A site. They are given the opportunity to index posts and/or custom page content, and replace the default search results with their own.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-captcha/"><strong>captcha</strong></a> modules (from Q2A 1.5+) provide a web interface for human verification. The reCAPTCHA plugin that comes with Q2A provides an example, using the popular <a href="http://www.google.com/recaptcha">reCAPTCHA</a> service.</li>
+							<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-process/"><strong>process</strong></a> modules (from Q2A 1.5+) have the opportunity to run at specific stages of Q2A’s response processing. They can be used for logging, analytics, additional authentication, caching, etc…</li>
 						</ul>
 
 						<h2 id="common-module-functions">Common module functions</h2>
@@ -143,7 +155,7 @@
 								<ul>
 									<li>All elements within the nested form array should be made HTML safe - use <code class="language-plaintext highlighter-rouge">qa_html()</code> as appropriate.</li>
 									<li>The <code class="language-plaintext highlighter-rouge">NAME=...</code> of all buttons and fields (within <code class="language-plaintext highlighter-rouge">tags</code> elements) should have a prefix which is unique to your plugin.</li>
-									<li>Use <code class="language-plaintext highlighter-rouge">qa_clicked()</code> and <code class="language-plaintext highlighter-rouge">qa_post_text()</code>, as described <a href="/code/functions/">here</a>, to check for button clicks and retrieve submitted fields.</li>
+									<li>Use <code class="language-plaintext highlighter-rouge">qa_clicked()</code> and <code class="language-plaintext highlighter-rouge">qa_post_text()</code>, as described <a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions">here</a>, to check for button clicks and retrieve submitted fields.</li>
 									<li>Use <code class="language-plaintext highlighter-rouge">qa_opt()</code> to get or set an option that is stored in Q2A’s options table. To prevent interference with Q2A or other plugins, any options should be named using a prefix which is unique to your plugin.</li>
 								</ul>
 							</li>
@@ -154,7 +166,7 @@
 
 						<h2 id="communication-between-modules">Communication between modules</h2>
 
-						<p>A module can define any additional functions for its own purposes, in the usual way for a PHP class. These functions can also be used for communication between modules, either within a plugin, or between different plugins. To call a function defined in a module, call <a href="/code/functions/"><code class="language-plaintext highlighter-rouge">qa_load_module()</code></a> to retrieve an object of the module’s class, then call the object’s function in the usual PHP way. Note that multiple calls to <code class="language-plaintext highlighter-rouge">qa_load_module()</code> will return the same object.</p>
+						<p>A module can define any additional functions for its own purposes, in the usual way for a PHP class. These functions can also be used for communication between modules, either within a plugin, or between different plugins. To call a function defined in a module, call <a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions"><code class="language-plaintext highlighter-rouge">qa_load_module()</code></a> to retrieve an object of the module’s class, then call the object’s function in the usual PHP way. Note that multiple calls to <code class="language-plaintext highlighter-rouge">qa_load_module()</code> will return the same object.</p>
 
 					</div>
 				</article>
@@ -198,18 +210,15 @@
 	<script src="../../../js/highlight.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
   
-	<!-- Scripts rom Q2A Docs - Classic version -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1165533-8&amp;l=dataLayer&amp;cx=c">
-	</script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js">
-	</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1974891-11"></script>
+	<!-- Google Analytics Chun Github -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		gtag('config', 'UA-1974891-11');
-		gtag('config', 'UA-1165533-8'); // old tracking ID
+		ga('create', 'UA-65621075-5', 'auto');
+		ga('send', 'pageview');
 	</script>
 
 </body>

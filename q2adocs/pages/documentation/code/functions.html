@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
 	<!-- Page Title Here -->
-	<title>Functions documentation - Question2Answer</title>
+	<title>Functions (documentation) - Question2Answer</title>
 	<meta name="description" content=="Selected functions in Question2Answer"/>
 	<link rel="canonical" href="http://docs.question2answer.org/pages/documentation/code/functions/"/>
 	
@@ -39,12 +39,13 @@
 	<div id="topBar" class="topBar">
 		<div class="topBar-wrapper flex-row">
 			<div class="flex-item not-flex-middle">
+				<div id="navTrigger" class="material-icons mobile-only">menu</div>
 				<a href="https://heliochun.github.io/q2adocs" class="topBarLogo">
 					<img src="../../../images/branding/question2answer-logo-350x40.png" class="logo-img normal-logo" />
 					<img src="../../../images/branding/question2answer-logo-white-350x40.png" class="logo-img white-logo" />
 				</a>
 			</div>
-			<div class="flex-item flex-middle">
+			<div id="mobileNav" class="flex-item flex-middle">
 				<nav class="main-nav">
 					<ul class="nav">
 						<li>
@@ -56,25 +57,33 @@
 								<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/code" class="sub-nav-item selected-nav">Code</a></li>
 							</ul>
 						</li>
-						<li><a href="#" class="nav-item">Contribute</a></li>
-						<li><a href="#" class="nav-item">Translate</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/contribute" class="nav-item">Contribute</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/translate" class="nav-item">Translate</a></li>
 						<li>
 							<span class="nav-item">Addons <span class="material-icons">arrow_drop_down</span> </span>
 							<ul class="sub-nav display-none">
-								<li><a href="#" class="sub-nav-item">Themes</a></li>
-								<li><a href="#" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/themes" class="sub-nav-item">Themes</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/plugins/" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/clients/" class="sub-nav-item">Clients</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/translations/" class="sub-nav-item">Translations</a></li>
 							</ul>
 						</li>
 					</ul>
+					<ul class="nav secondary-nav mobile-only">
+						<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
+						<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="flex-item not-flex-middle">
+			<div class="flex-item not-flex-middle not-mobile">
 				<ul class="nav secondary-nav">
-					<li><a href="https://docs.question2answer.org/services" class="nav-item">Services</a></li>
-					<li><a href="https://www.question2answer.org/sites.php" class="nav-item">Sites</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
 					<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
 				</ul>
 			</div>
+			<div id="darkPane"></div>
 		</div>
 	</div>
 	
@@ -94,11 +103,14 @@
 			<div class="main-content">
 				<article class="page-article" itemscope>
 					
-					<ul class="page-sub-directories">
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code">External</a></li>
-						<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions">Functions</a></li>
-						<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure">App Structure</a></li>
-					</ul>
+					<div class="page-directory-navigation">
+						<div id="current-dir-nav"></div>
+						<ul class="page-sub-directories">
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code">External</a></li>
+							<li class="page-sub-directory selected-nav"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/functions">Functions</a></li>
+							<li class="page-sub-directory"><a href="https://heliochun.github.io/q2adocs/pages/documentation/code/app-structure">App Structure</a></li>
+						</ul>
+					</div>
 					
 					<div class="article-content-container">
 						<h1 id="selected-functions-in-question2answer">Selected functions in Question2Answer</h1>
@@ -115,7 +127,7 @@
 <h2 id="general-functions-in-qa-basephp">General functions in <code class="language-plaintext highlighter-rouge">qa-base.php</code></h2>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">qa_exit($reason)</code></strong> calls the <code class="language-plaintext highlighter-rouge">shutdown()</code> method of any installed <a href="/plugins/modules-process/">process modules</a>, passing the supplied <code class="language-plaintext highlighter-rouge">$reason</code>. Then it terminates execution of the PHP script with PHP’s <code class="language-plaintext highlighter-rouge">exit;</code> command. Requires Q2A 1.5+.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">qa_exit($reason)</code></strong> calls the <code class="language-plaintext highlighter-rouge">shutdown()</code> method of any installed <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-process/">process modules</a>, passing the supplied <code class="language-plaintext highlighter-rouge">$reason</code>. Then it terminates execution of the PHP script with PHP’s <code class="language-plaintext highlighter-rouge">exit;</code> command. Requires Q2A 1.5+.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_fatal_error($message)</code></strong> outputs and logs <code class="language-plaintext highlighter-rouge">$message</code>, then calls <code class="language-plaintext highlighter-rouge">qa_exit('error');</code> to terminate execution.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_list_modules($type)</code></strong> returns an array containing the names of all installed modules of type <code class="language-plaintext highlighter-rouge">$type</code>.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_load_module($type, $name)</code></strong> returns an object belonging to the class defined in module <code class="language-plaintext highlighter-rouge">$name</code> of type <code class="language-plaintext highlighter-rouge">$type</code>, or <code class="language-plaintext highlighter-rouge">null</code> if it cannot be loaded. You can use this to communicate between multiple modules within a plugin, or between different plugins. Note that multiple calls to <code class="language-plaintext highlighter-rouge">qa_load_module()</code> with the same <code class="language-plaintext highlighter-rouge">$type</code> and <code class="language-plaintext highlighter-rouge">$name</code> will return the same object.</li>
@@ -133,7 +145,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">qa_is_https_probably()</code></strong> returns whether the current request is using the HTTPS protocol. It is hard to determine this absolutely.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_is_human_probably()</code></strong> returns <code class="language-plaintext highlighter-rouge">true</code> if the current request appears to be from a person using a web browser, rather than a search engine bot or automated script. This assessment is based on the HTTP user agent containing a known string such as <code class="language-plaintext highlighter-rouge">MSIE</code> or <code class="language-plaintext highlighter-rouge">Firefox</code>. Note that it is perfectly possible for a malicious bot or script to masquerade as a web browser.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_is_mobile_probably()</code></strong> returns <code class="language-plaintext highlighter-rouge">true</code> if the current request appears to be from a mobile phone. This assessment is based on the presence of mobile HTTP headers or the HTTP user agent containing a mobile identifying string. Requires Q2A 1.5+.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">qa_lang($identifier)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">qa_lang_html($identifier)</code></strong> return a localized language phrase from the appropriate <code class="language-plaintext highlighter-rouge">qa-lang-*.php</code> file. For example, <code class="language-plaintext highlighter-rouge">qa_lang('main/cancel_button')</code> would return the phrase with key <code class="language-plaintext highlighter-rouge">'cancel_button'</code> from the file <code class="language-plaintext highlighter-rouge">qa-lang-main.php</code>. The phrase returned by <code class="language-plaintext highlighter-rouge">qa_lang_html()</code> is escaped for output in HTML. From Q2A 1.5+, language files can also be <a href="/plugins/">registered by plugins</a> and then accessed via these functions.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">qa_lang($identifier)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">qa_lang_html($identifier)</code></strong> return a localized language phrase from the appropriate <code class="language-plaintext highlighter-rouge">qa-lang-*.php</code> file. For example, <code class="language-plaintext highlighter-rouge">qa_lang('main/cancel_button')</code> would return the phrase with key <code class="language-plaintext highlighter-rouge">'cancel_button'</code> from the file <code class="language-plaintext highlighter-rouge">qa-lang-main.php</code>. The phrase returned by <code class="language-plaintext highlighter-rouge">qa_lang_html()</code> is escaped for output in HTML. From Q2A 1.5+, language files can also be <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/">registered by plugins</a> and then accessed via these functions.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_path_to_root()</code></strong> returns the URL to the root of the Q2A site, relative to the currently requested page. Requires Q2A 1.5+.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_path($request)</code></strong> returns the URL for Q2A page <code class="language-plaintext highlighter-rouge">$request</code>, relative to the currently requested page. You can also call <strong><code class="language-plaintext highlighter-rouge">qa_path($request, $params)</code></strong> to add GET-style parameters to the URL, where <code class="language-plaintext highlighter-rouge">$params</code> is an array of parameter name <code class="language-plaintext highlighter-rouge">=&gt;</code> parameter value, not yet urlencoded. <strong>To ensure compatibility with different Q2A URL structures, please use this (or a related <code class="language-plaintext highlighter-rouge">qa_path_*()</code> function to build URLs instead of hard-coding their structure.</strong></li>
   <li>
@@ -145,7 +157,7 @@
   <li><strong><code class="language-plaintext highlighter-rouge">qa_q_path($questionid, $title, $absolute, $showtype, $showid)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">qa_q_path_html(...)</code></strong> return the URL for question <code class="language-plaintext highlighter-rouge">$questionid</code> which has <code class="language-plaintext highlighter-rouge">$title</code> as its title. If <code class="language-plaintext highlighter-rouge">$absolute</code> is <code class="language-plaintext highlighter-rouge">true</code>, this will be an absolute URL, otherwise it will be relative to the currently requested page. To link to a particular answer or comment within that question page, pass <code class="language-plaintext highlighter-rouge">'A'</code> or <code class="language-plaintext highlighter-rouge">'C'</code> as the <code class="language-plaintext highlighter-rouge">$showtype</code> and the <code class="language-plaintext highlighter-rouge">postid</code> of the answer or comment in <code class="language-plaintext highlighter-rouge">$showid</code>. Otherwise, pass <code class="language-plaintext highlighter-rouge">null</code> or omit these last two parameters. The URL returned by <code class="language-plaintext highlighter-rouge">qa_q_path_html()</code> is escaped for output in HTML. Requires Q2A 1.5+.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_self_html()</code></strong> returns the relative URL for the current Q2A page, preserving URL parameters, escaped for output in HTML. It is particularly useful for creating form tags, e.g. <code class="language-plaintext highlighter-rouge">echo '&lt;FORM METHOD="POST" ACTION="'.qa_self_html().'"&gt;';</code></li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_redirect($request)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">qa_redirect($request, $params)</code></strong> perform an HTTP redirect to a Q2A page, specified in the same way as the parameters to <code class="language-plaintext highlighter-rouge">qa_path()</code>.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">qa_redirect_raw($url)</code></strong> performs an HTTP redirect to <code class="language-plaintext highlighter-rouge">$url</code>, without processing the URL in any way. Generally you should use <code class="language-plaintext highlighter-rouge">qa_redirect()</code> however this function can be useful for <a href="/plugins/modules-login/">login modules</a>.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">qa_redirect_raw($url)</code></strong> performs an HTTP redirect to <code class="language-plaintext highlighter-rouge">$url</code>, without processing the URL in any way. Generally you should use <code class="language-plaintext highlighter-rouge">qa_redirect()</code> however this function can be useful for <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-login/">login modules</a>.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_retrieve_url($url)</code></strong> returns the content of remote <code class="language-plaintext highlighter-rouge">$url</code>, using PHP’s <code class="language-plaintext highlighter-rouge">file_get_contents()</code> or curl functions.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_opt($name)</code></strong> gets the value of the option labelled <code class="language-plaintext highlighter-rouge">$name</code> from Q2A’s internal options storage.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_opt($name, $value)</code></strong> sets the option labelled <code class="language-plaintext highlighter-rouge">$name</code> to <code class="language-plaintext highlighter-rouge">$value</code> in Q2A’s internal options storage. To prevent interference with Q2A or other plugins, your options should be named using a prefix which is unique to your plugin. Do not use this to store large pieces of content, since all options are retrieved for every Q2A page request - instead, look at <code class="language-plaintext highlighter-rouge">app/blobs.php</code>.</li>
@@ -196,7 +208,7 @@
 <p>Note that all <code class="language-plaintext highlighter-rouge">qa_post_...()</code> functions will send the appropriate email notifications and event reports, as well as update database indexes and counts. This can be prevented with the <code class="language-plaintext highlighter-rouge">qa_suspend...()</code> functions, described elsewhere on this page.</p>
 
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">qa_post_create($type, $parentpostid, $title, $content, $format, $categoryid, $tags, $userid)</code></strong> creates a new post in the database, and returns its <code class="language-plaintext highlighter-rouge">postid</code>. Set <code class="language-plaintext highlighter-rouge">$type</code> to <code class="language-plaintext highlighter-rouge">'Q'</code> for a new question, <code class="language-plaintext highlighter-rouge">'A'</code> for an answer, or <code class="language-plaintext highlighter-rouge">'C'</code> for a comment. To queue the post for moderation (requires Q2A 1.5+), set <code class="language-plaintext highlighter-rouge">$type</code> to <code class="language-plaintext highlighter-rouge">'Q_QUEUED'</code>, <code class="language-plaintext highlighter-rouge">'A_QUEUED'</code>, or <code class="language-plaintext highlighter-rouge">'C_QUEUED'</code>. For questions, set <code class="language-plaintext highlighter-rouge">$parentpostid</code> to the <code class="language-plaintext highlighter-rouge">postid</code> of the answer to which the question is related, or <code class="language-plaintext highlighter-rouge">null</code> if (as in most cases) the question is not related to an answer. For answers, set <code class="language-plaintext highlighter-rouge">$parentpostid</code> to the <code class="language-plaintext highlighter-rouge">postid</code> of the question being answered. For comments, set <code class="language-plaintext highlighter-rouge">$parentpostid</code> to the <code class="language-plaintext highlighter-rouge">postid</code> of the question or answer to which the comment relates. The <code class="language-plaintext highlighter-rouge">$content</code> and <code class="language-plaintext highlighter-rouge">$format</code> parameters go together - if <code class="language-plaintext highlighter-rouge">$format</code> is <code class="language-plaintext highlighter-rouge">''</code> then <code class="language-plaintext highlighter-rouge">$content</code> should be in plain UTF-8 text, and if <code class="language-plaintext highlighter-rouge">$format</code> is <code class="language-plaintext highlighter-rouge">'html'</code> then <code class="language-plaintext highlighter-rouge">$content</code> should be in UTF-8 HTML. Other values of <code class="language-plaintext highlighter-rouge">$format</code> may be allowed if an appropriate <a href="/plugins/modules-viewer/">viewer module</a> is installed. The <code class="language-plaintext highlighter-rouge">$title</code>, <code class="language-plaintext highlighter-rouge">$categoryid</code> and <code class="language-plaintext highlighter-rouge">$tags</code> parameters are only relevant when creating a question - <code class="language-plaintext highlighter-rouge">$tags</code> can either be an array of tags, or a string of tags separated by commas. The new post will be assigned to <code class="language-plaintext highlighter-rouge">$userid</code> if it is not <code class="language-plaintext highlighter-rouge">null</code>, otherwise it will be anonymous. Additional optional parameters set notification, extra question fields and names on anonymous posts.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">qa_post_create($type, $parentpostid, $title, $content, $format, $categoryid, $tags, $userid)</code></strong> creates a new post in the database, and returns its <code class="language-plaintext highlighter-rouge">postid</code>. Set <code class="language-plaintext highlighter-rouge">$type</code> to <code class="language-plaintext highlighter-rouge">'Q'</code> for a new question, <code class="language-plaintext highlighter-rouge">'A'</code> for an answer, or <code class="language-plaintext highlighter-rouge">'C'</code> for a comment. To queue the post for moderation (requires Q2A 1.5+), set <code class="language-plaintext highlighter-rouge">$type</code> to <code class="language-plaintext highlighter-rouge">'Q_QUEUED'</code>, <code class="language-plaintext highlighter-rouge">'A_QUEUED'</code>, or <code class="language-plaintext highlighter-rouge">'C_QUEUED'</code>. For questions, set <code class="language-plaintext highlighter-rouge">$parentpostid</code> to the <code class="language-plaintext highlighter-rouge">postid</code> of the answer to which the question is related, or <code class="language-plaintext highlighter-rouge">null</code> if (as in most cases) the question is not related to an answer. For answers, set <code class="language-plaintext highlighter-rouge">$parentpostid</code> to the <code class="language-plaintext highlighter-rouge">postid</code> of the question being answered. For comments, set <code class="language-plaintext highlighter-rouge">$parentpostid</code> to the <code class="language-plaintext highlighter-rouge">postid</code> of the question or answer to which the comment relates. The <code class="language-plaintext highlighter-rouge">$content</code> and <code class="language-plaintext highlighter-rouge">$format</code> parameters go together - if <code class="language-plaintext highlighter-rouge">$format</code> is <code class="language-plaintext highlighter-rouge">''</code> then <code class="language-plaintext highlighter-rouge">$content</code> should be in plain UTF-8 text, and if <code class="language-plaintext highlighter-rouge">$format</code> is <code class="language-plaintext highlighter-rouge">'html'</code> then <code class="language-plaintext highlighter-rouge">$content</code> should be in UTF-8 HTML. Other values of <code class="language-plaintext highlighter-rouge">$format</code> may be allowed if an appropriate <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/modules/modules-viewer/">viewer module</a> is installed. The <code class="language-plaintext highlighter-rouge">$title</code>, <code class="language-plaintext highlighter-rouge">$categoryid</code> and <code class="language-plaintext highlighter-rouge">$tags</code> parameters are only relevant when creating a question - <code class="language-plaintext highlighter-rouge">$tags</code> can either be an array of tags, or a string of tags separated by commas. The new post will be assigned to <code class="language-plaintext highlighter-rouge">$userid</code> if it is not <code class="language-plaintext highlighter-rouge">null</code>, otherwise it will be anonymous. Additional optional parameters set notification, extra question fields and names on anonymous posts.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_post_set_content($postid, $title, $content, $format, $tags)</code></strong> changes the data stored for post <code class="language-plaintext highlighter-rouge">$postid</code> based on any of the <code class="language-plaintext highlighter-rouge">$title</code>, <code class="language-plaintext highlighter-rouge">$content</code>, <code class="language-plaintext highlighter-rouge">$format</code> and <code class="language-plaintext highlighter-rouge">$tags</code> parameters passed which are not <code class="language-plaintext highlighter-rouge">null</code>. The meaning of these parameters is the same as for <code class="language-plaintext highlighter-rouge">qa_post_create()</code> above. Additional optional parameters allow changes to post notification, extra question fields, names on anonymous posts and can identify the user who made the change.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_post_set_category($postid, $categoryid)</code></strong> changes the category of <code class="language-plaintext highlighter-rouge">$postid</code> to <code class="language-plaintext highlighter-rouge">$categoryid</code>. The category of all related posts (shown together on the same question page) will also be changed.</li>
   <li><strong><code class="language-plaintext highlighter-rouge">qa_post_set_selchildid($questionid, $answerid)</code></strong> sets the selected best answer of <code class="language-plaintext highlighter-rouge">$questionid</code> to <code class="language-plaintext highlighter-rouge">$answerid</code> (or to none if <code class="language-plaintext highlighter-rouge">$answerid</code> is <code class="language-plaintext highlighter-rouge">null</code>).</li>
@@ -327,18 +339,15 @@
 	<script src="../../../js/highlight.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
   
-	<!-- Scripts rom Q2A Docs - Classic version -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1165533-8&amp;l=dataLayer&amp;cx=c">
-	</script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js">
-	</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1974891-11"></script>
+	<!-- Google Analytics Chun Github -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		gtag('config', 'UA-1974891-11');
-		gtag('config', 'UA-1165533-8'); // old tracking ID
+		ga('create', 'UA-65621075-5', 'auto');
+		ga('send', 'pageview');
 	</script>
 
 </body>

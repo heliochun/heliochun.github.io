@@ -38,12 +38,13 @@
 	<div id="topBar" class="topBar">
 		<div class="topBar-wrapper flex-row">
 			<div class="flex-item not-flex-middle">
-				<a href="https://heliochun.github.io/q2adocs" class="topBarLogo">
+				<div id="navTrigger" class="material-icons mobile-only">menu</div>
+				<a href="https://docs.question2answer.org" class="topBarLogo">
 					<img src="images/branding/question2answer-logo-350x40.png" class="logo-img normal-logo" />
 					<img src="images/branding/question2answer-logo-white-350x40.png" class="logo-img white-logo" />
 				</a>
 			</div>
-			<div class="flex-item flex-middle">
+			<div id="mobileNav" class="flex-item flex-middle">
 				<nav class="main-nav">
 					<ul class="nav">
 						<li>
@@ -55,25 +56,33 @@
 								<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/code" class="sub-nav-item">Code</a></li>
 							</ul>
 						</li>
-						<li><a href="#" class="nav-item">Contribute</a></li>
-						<li><a href="#" class="nav-item">Translate</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/contribute" class="nav-item">Contribute</a></li>
+						<li><a href="https://heliochun.github.io/q2adocs/pages/translate" class="nav-item">Translate</a></li>
 						<li>
 							<span class="nav-item">Addons <span class="material-icons">arrow_drop_down</span> </span>
 							<ul class="sub-nav display-none">
-								<li><a href="#" class="sub-nav-item">Themes</a></li>
-								<li><a href="#" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/themes" class="sub-nav-item">Themes</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/plugins/" class="sub-nav-item">Plugins</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/clients/" class="sub-nav-item">Clients</a></li>
+								<li><a href="https://heliochun.github.io/q2adocs/pages/addons/translations/" class="sub-nav-item">Translations</a></li>
 							</ul>
 						</li>
 					</ul>
+					<ul class="nav secondary-nav mobile-only">
+						<li><a href="https://heliochun.github.io/q2adocs/services" class="nav-item">Services</a></li>
+						<li><a href="https://www.question2answer.org/sites.php" class="nav-item">Sites</a></li>
+						<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
+					</ul>
 				</nav>
 			</div>
-			<div class="flex-item not-flex-middle">
+			<div class="flex-item not-flex-middle not-mobile">
 				<ul class="nav secondary-nav">
-					<li><a href="https://docs.question2answer.org/services" class="nav-item">Services</a></li>
-					<li><a href="https://www.question2answer.org/sites.php" class="nav-item">Sites</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/services" class="nav-item">Services</a></li>
+					<li><a href="https://heliochun.github.io/q2adocs/pages/sites" class="nav-item">Sites</a></li>
 					<li><a href="https://www.question2answer.org/qa" class="nav-item">Q&amp;A</a></li>
 				</ul>
 			</div>
+			<div id="darkPane"></div>
 		</div>
 	</div>
 
@@ -84,12 +93,7 @@
 			<h1>Question2Answer</h1>
 			<p>A free open-source platform for Q&amp;A sites.</p>
 		</div>
-		
-		<div id="scrollToSection" class="scrollToSection noSelect">
-			<div class="stretchArrow">
-				<i class="material-icons floatButton">keyboard_arrow_down</i>
-			</div>
-		</div>
+
 	</section>
 
 	<!-- Section -->
@@ -153,7 +157,7 @@
 										<h4 class="card-showcase-title">How do I get Q2A?</h4>
 										<p>
 											<a href="question2answer-latest.zip"><b>Download Question2Answer</b></a>, latest version 
-											then read <a href="https://docs.question2answer.org/install/">how to install</a>. 
+											then read <a href="https://heliochun.github.io/q2adocs/pages/documentation/themes">how to install</a>. 
 											Version 1.8.4 was <a href="versions.php">released</a> on May 7th, 2020. 
 											Also <a href="https://github.com/q2a/question2answer">on GitHub</a>.
 										</p>
@@ -199,9 +203,9 @@
 										<h4 class="card-showcase-title">How can I help?</h4>
 										<p>
 											Contribute <a href="https://github.com/q2a/question2answer">via Github</a>, 
-											create a <a href="https://docs.question2answer.org/themes/">theme</a>, 
-											<a href="https://docs.question2answer.org/plugins/tutorial/">plugin</a> or 
-											<a href="https://docs.question2answer.org/translate/">translation</a>.
+											create a <a href="https://heliochun.github.io/q2adocs/pages/documentation/themes/">theme</a>, 
+											<a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/plugin-tutorial">plugin</a> or 
+											<a href="https://heliochun.github.io/q2adocs/pages/translate">translation</a>.
 										</p>
 									</div>
 								</div>
@@ -222,9 +226,9 @@
 									<div class="card-showcase-description">
 										<h4 class="card-showcase-title">Easy to set up</h4>
 										<ul>
-											<li>Q2A takes 5 minutes (or less!) to <a href="https://docs.question2answer.org/install/">install</a>.</li>
-											<li>Easy styling with <a href="https://docs.question2answer.org/themes/">CSS themes</a>.</li>
-											<li>Supports <a href="https://docs.question2answer.org/translate/">translation</a> into any language.</li>
+											<li>Q2A takes 5 minutes (or less!) to <a href="https://heliochun.github.io/q2adocs/pages/documentation/install/">install</a>.</li>
+											<li>Easy styling with <a href="https://heliochun.github.io/q2adocs/pages/documentation/themes/">CSS themes</a>.</li>
+											<li>Supports <a href="https://heliochun.github.io/q2adocs/pages/translate/">translation</a> into any language.</li>
 											<li>Custom sidebar, widgets, pages and links.</li>
 											<li>SEO features such as <a href="http://sitemaps.org/">XML Sitemap</a> and neat URLs.</li>
 										</ul>
@@ -238,8 +242,8 @@
 									<div class="card-showcase-description">
 										<h4 class="card-showcase-title">Fast and secure</h4>
 										<ul>
-											<li>PHP/MySQL <a href="https://docs.question2answer.org/install/optimize/">scalable</a> to millions of users and posts.</li>
-											<li><a href="https://docs.question2answer.org/install/security/">Safe from</a> XSS, CSRF and SQL injection attacks.</li>
+											<li>PHP/MySQL <a href="https://heliochun.github.io/q2adocs/documentation/install/optimization/">scalable</a> to millions of users and posts.</li>
+											<li><a href="https://heliochun.github.io/q2adocs/pages/documentation/install/security/">Safe from</a> XSS, CSRF and SQL injection attacks.</li>
 											<li>Beat spam with captchas, moderation and/or flagging.</li>
 										</ul>
 									</div>
@@ -271,7 +275,7 @@
 											<li>Create experts, editors, moderators and admins.</li>
 											<li>User avatars (or <a href="https://en.gravatar.com/">Gravatar</a>) and custom fields.</li>
 											<li>Private messages and public wall posts.</li>
-											<li>Log in via Facebook or others (using <a href="https://docs.question2answer.org/addons/#plugins">plugins</a>).</li>
+											<li>Log in via Facebook or others (using <a href="https://heliochun.github.io/q2adocs/pages/addons/plugins/">plugins</a>).</li>
 										</ul>
 									</div>
 								</div>
@@ -283,9 +287,9 @@
 									<div class="card-showcase-description">
 										<h4 class="card-showcase-title">... or integrate with existing sites</h4>
 										<ul>
-											<li>Out-of-the-box <a href="https://docs.question2answer.org/install/wordpress/">WordPress</a> and Joomla integration.</li>
-											<li>Custom <a href="https://docs.question2answer.org/install/single-sign-on/">single sign-on</a> support for other sites.</li>
-											<li>Deep integration and customization via <a href="https://docs.question2answer.org/plugins/">plugins</a>.</li>
+											<li>Out-of-the-box <a href="https://heliochun.github.io/q2adocs/pages/documentation/install/wordpress/">WordPress</a> and Joomla integration.</li>
+											<li>Custom <a href="https://heliochun.github.io/q2adocs/pages/documentation/install/single-sign-on/">single sign-on</a> support for other sites.</li>
+											<li>Deep integration and customization via <a href="https://heliochun.github.io/q2adocs/pages/documentation/plugins/">plugins</a>.</li>
 										</ul>
 									</div>
 								</div>
@@ -330,18 +334,15 @@
 	<script src="js/sticky_bar.js"></script>
 	<script src="js/main.js"></script>
   
-	<!-- Scripts rom Q2A Docs - Classic version -->
-	<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1165533-8&amp;l=dataLayer&amp;cx=c">
-	</script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js">
-	</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-1974891-11"></script>
+	<!-- Google Analytics Chun Github -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-		gtag('config', 'UA-1974891-11');
-		gtag('config', 'UA-1165533-8'); // old tracking ID
+		ga('create', 'UA-65621075-5', 'auto');
+		ga('send', 'pageview');
 	</script>
 
 </body>
